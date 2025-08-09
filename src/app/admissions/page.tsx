@@ -191,13 +191,14 @@ export default function Admissions() {
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8">
-              {['Curriculum', 'Admissions', 'Faculty'].map((item, index) => (
+              {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item, index) => (
                 <motion.a
                   key={item}
-                  href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : `/#${item.toLowerCase()}`}
+                  href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `/#${item.toLowerCase()}`}
                   className={`relative font-medium transition-colors duration-300 py-2 ${
                     item === 'Admissions' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                   }`}
+                  style={{ lineHeight: '1.4', paddingBottom: '0.2em' }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -245,13 +246,14 @@ export default function Admissions() {
               className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200"
             >
               <div className="px-4 py-6 space-y-4">
-                {['Curriculum', 'Admissions', 'Faculty'].map((item) => (
+                {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item) => (
                   <a
                     key={item}
-                    href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : `/#${item.toLowerCase()}`}
+                    href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `/#${item.toLowerCase()}`}
                     className={`block font-medium py-2 transition-colors ${
                       item === 'Admissions' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                     }`}
+                    style={{ lineHeight: '1.4', paddingBottom: '0.2em' }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item}

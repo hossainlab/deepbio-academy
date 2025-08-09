@@ -32,28 +32,28 @@ export default function Home() {
         {
           code: "BCB101",
           credits: 3,
-          title: "Foundational Biology for Bioinformatics",
-          content: "Advanced concepts in genetics, gene expression, and epigenetics. In-depth study of genomics, transcriptomics, proteomics, and single-cell sequencing. Practical use of NCBI, EBI, UniProt databases.",
-          goals: "Develop a strong understanding of molecular biology and 'omics technologies, and learn to navigate key biological databases.",
-          difficulty: "Intermediate",
+          title: "Introduction to Bioinformatics and Computational Biology",
+          content: "Foundational concepts in bioinformatics and computational biology. Overview of molecular biology, genomics, and data analysis. Introduction to major databases (NCBI, EBI, UniProt) and their applications in biological research.",
+          goals: "Develop a comprehensive understanding of the field and learn to navigate key biological databases and resources.",
+          difficulty: "Beginner",
           duration: "12 weeks"
         },
         {
           code: "BCB102",
           credits: 3,
-          title: "Programming and Statistical Computing",
-          content: "Advanced Python scripting for data manipulation (Pandas, NumPy, BioPython). Statistical computing with R. Mandatory use of Git and GitHub for version control.",
-          goals: "Master essential programming skills in Python and R for data analysis, and establish a foundation in collaborative software development.",
+          title: "Programming and Statistical Computing for Life Sciences",
+          content: "Python programming for biological data analysis using Pandas, NumPy, and BioPython. Statistical computing with R for life sciences applications. Version control with Git and GitHub for collaborative research.",
+          goals: "Master essential programming and statistical skills tailored for biological data analysis and collaborative scientific computing.",
           difficulty: "Intermediate",
           duration: "12 weeks"
         },
         {
           code: "BCB103",
           credits: 3,
-          title: "Biological Databases and Data Retrieval",
-          content: "In-depth exploration of key databases and programmatic access via APIs. Hands-on work with standard data formats like FASTA, FASTQ, and VCF.",
-          goals: "Gain proficiency in accessing, parsing, and managing diverse biological data formats, and learn to automate data retrieval.",
-          difficulty: "Beginner",
+          title: "Command Line Tools and Workflow Automation in Bioinformatics",
+          content: "Unix/Linux command line proficiency for bioinformatics. Workflow management systems and pipeline automation. Shell scripting and task automation for high-throughput biological data processing.",
+          goals: "Develop expertise in command-line bioinformatics tools and automated workflow design for efficient data processing.",
+          difficulty: "Intermediate",
           duration: "12 weeks"
         }
       ]
@@ -68,27 +68,27 @@ export default function Home() {
           code: "BCB201",
           credits: 3,
           title: "Genomics, Proteomics and Transcriptomics",
-          content: "Comprehensive workflows for read quality control, alignment, and assembly. Differential expression analysis of RNA-seq data using DESeq2 and EdgeR.",
-          goals: "Design and execute complete bioinformatics pipelines for NGS data, from raw reads to meaningful biological insights.",
+          content: "Comprehensive analysis of omics data including genomic sequencing, RNA-seq transcriptomics, and proteomics. Quality control, alignment, assembly, and differential expression analysis using tools like DESeq2, EdgeR, and proteomics pipelines.",
+          goals: "Master the analysis of multi-omics datasets and develop expertise in integrating genomic, transcriptomic, and proteomic data for biological insights.",
           difficulty: "Advanced",
           duration: "12 weeks"
         },
         {
           code: "BCB202",
           credits: 3,
-          title: "Structural and Evolutionary Bioinformatics",
-          content: "Principles of protein folding and structural prediction. Hands-on use of modern tools like AlphaFold and molecular visualization software.",
-          goals: "Understand protein structure and evolution, using cutting-edge computational tools for structural analysis.",
+          title: "Metagenomics and Microbiome Data Analysis",
+          content: "Analysis of complex microbial communities using metagenomics approaches. Taxonomic classification, functional annotation, diversity analysis, and comparative metagenomics. Tools for microbiome data processing and statistical analysis.",
+          goals: "Master the analysis of metagenomic data and develop expertise in microbiome research methodologies and interpretation of microbial community dynamics.",
           difficulty: "Advanced",
           duration: "12 weeks"
         },
         {
           code: "BCB203",
           credits: 3,
-          title: "Variant Calling and Population Genetics",
-          content: "Introduction to genetic variation. Comprehensive variant calling pipelines using tools like GATK. Population genetics analysis.",
-          goals: "Understand and identify genetic variations from sequencing data, and interpret their impact in population genetics context.",
-          difficulty: "Intermediate",
+          title: "Machine Learning in Computational Biology",
+          content: "Application of machine learning algorithms to biological data. Supervised and unsupervised learning, feature selection, model validation, and interpretation. Use cases in genomics, drug discovery, and personalized medicine.",
+          goals: "Apply machine learning techniques to solve complex biological problems and develop predictive models for biological systems and biomedical applications.",
+          difficulty: "Advanced",
           duration: "12 weeks"
         }
       ]
@@ -242,11 +242,12 @@ export default function Home() {
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8">
-              {['Curriculum', 'Admissions', 'Faculty'].map((item, index) => (
+              {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item, index) => (
                 <motion.a
                   key={item}
-                  href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : `#${item.toLowerCase()}`}
+                  href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `#${item.toLowerCase()}`}
                   className="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+                  style={{ lineHeight: '1.4', paddingBottom: '0.2em' }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -292,11 +293,12 @@ export default function Home() {
               className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200"
             >
               <div className="px-4 py-6 space-y-4">
-                {['Curriculum', 'Admissions', 'Faculty'].map((item) => (
+                {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item) => (
                   <a
                     key={item}
-                    href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : `#${item.toLowerCase()}`}
+                    href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `#${item.toLowerCase()}`}
                     className="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors"
+                    style={{ lineHeight: '1.4', paddingBottom: '0.2em' }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item}
