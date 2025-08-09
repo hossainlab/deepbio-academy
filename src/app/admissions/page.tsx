@@ -280,12 +280,32 @@ export default function Admissions() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8">
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               Join the Future of
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent block">
+              <motion.span
+                className="bg-gradient-to-r from-blue-700 via-blue-600 to-purple-600 bg-clip-text text-transparent block leading-tight font-extrabold"
+                style={{ lineHeight: '1.2', paddingBottom: '0.1em' }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                Bioinformatics &
+              </motion.span>
+              <motion.span
+                className="bg-gradient-to-r from-blue-700 via-blue-600 to-purple-600 bg-clip-text text-transparent block font-extrabold"
+                style={{ lineHeight: '1.2', paddingBottom: '0.1em' }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.7 }}
+              >
                 Computational Biology
-              </span>
-            </h1>
+              </motion.span>
+            </motion.h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
               Start your journey with our world-class BCB Professional Training Program. 
               Limited seats available for exceptional candidates.

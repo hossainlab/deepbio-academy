@@ -343,7 +343,7 @@ export default function Home() {
             >
               Master the Future of
               <motion.span
-                className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent block leading-tight font-extrabold"
+                className="bg-gradient-to-r from-blue-700 via-blue-600 to-purple-600 bg-clip-text text-transparent block leading-tight font-extrabold"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -351,7 +351,8 @@ export default function Home() {
                 Bioinformatics &
               </motion.span>
               <motion.span
-                className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent block font-extrabold"
+                className="bg-gradient-to-r from-blue-700 via-blue-600 to-purple-600 bg-clip-text text-transparent block font-extrabold"
+                style={{ lineHeight: '1.2', paddingBottom: '0.1em' }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.7 }}
