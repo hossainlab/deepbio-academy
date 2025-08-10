@@ -9,6 +9,7 @@ import {
   PlayCircle, Download, ExternalLink, Zap, Target, TrendingUp
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import AcademicCalendar from '../components/AcademicCalendar';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
@@ -229,7 +230,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-semibold text-gray-800">Now accepting applications for 2024</span>
+              <span className="text-sm font-semibold text-gray-800">Applications open in September for 2025‑26</span>
               <ArrowRight className="w-4 h-4 ml-2 text-gray-600" />
             </motion.div>
 
@@ -594,6 +595,61 @@ export default function Home() {
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Upcoming Events Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Important Dates & Events
+              </h2>
+              <p className="text-xl text-gray-600 mb-8">
+                Stay updated with key academic milestones, deadlines, and exciting events throughout your journey.
+              </p>
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <motion.a
+                  href="/academic-calendar"
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Calendar className="w-5 h-5" />
+                  <span>View Full Calendar</span>
+                </motion.a>
+                <motion.button
+                  className="px-6 py-3 border-2 border-gray-300 text-gray-700 font-bold rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Download className="w-5 h-5" />
+                  <span>Download Calendar</span>
+                </motion.button>
+              </motion.div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <AcademicCalendar compact={true} showFilters={false} />
+            </motion.div>
+          </div>
         </div>
       </section>
 

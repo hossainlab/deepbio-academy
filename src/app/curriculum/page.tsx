@@ -269,14 +269,15 @@ export default function Curriculum() {
                 <Download className="w-5 h-5" />
                 <span>Download Full Curriculum</span>
               </motion.button>
-              <motion.button
+              <motion.a
+                href="/academic-calendar"
                 className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-800 font-bold rounded-full border-2 border-gray-300 hover:border-blue-500 transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Calendar className="w-5 h-5" />
                 <span>View Academic Calendar</span>
-              </motion.button>
+              </motion.a>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
