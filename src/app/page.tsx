@@ -158,7 +158,7 @@ export default function Home() {
   const stats = [
     { number: "100%", label: "Employment Rate", description: "within 6 months" },
     { number: "36", label: "Credits", description: "internationally recognized" },
-    { number: "15+", label: "Industry Partners", description: "for internships" },
+    { number: "3+", label: "Industry Partners", description: "for internships" },
     { number: "24/7", label: "Support", description: "technical assistance" }
   ];
 
@@ -337,7 +337,7 @@ export default function Home() {
               Why Choose Our Program?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Experience world-class education designed by industry experts and leading researchers
+              Experience international standard education designed by industry experts and researchers
             </p>
           </motion.div>
 
@@ -449,7 +449,7 @@ export default function Home() {
               <h3 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Healthcare?</h3>
               <p className="text-xl text-gray-200 mb-8 max-w-3xl">
                 The revolution in high-throughput sequencing and AI is creating unprecedented opportunities. 
-                Join the next generation of computational biologists who are transforming medicine, agriculture, and biotechnology.
+                Join the next generation of bioinformaticians and computational biologists who are transforming medicine, agriculture, and biotechnology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button
@@ -485,7 +485,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              World-Class Curriculum
+              International Standard Curriculum
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               36 credits across four intensive quarters, designed by industry experts and updated annually
@@ -715,7 +715,7 @@ export default function Home() {
               Ready to Start Your Journey?
             </h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-              Join the next cohort of computational biology leaders. Applications are now open for our 2024 program.
+              Join the next cohort of bioinformatics and computational biology leaders. Applications are now open for our 2025-26 program.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
@@ -724,7 +724,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Apply Now - Early Bird 20% Off
+                Apply Now
               </motion.button>
               <motion.button
                 className="px-10 py-5 border-2 border-gray-300 text-gray-800 font-bold text-lg rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
@@ -738,11 +738,11 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-600">
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2 text-blue-600" />
-                Application Deadline: March 15, 2024
+                Application Deadline: September 15, 2025
               </div>
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
-                Rolling Admissions Available
+                Rolling Admissions Not Available
               </div>
             </div>
           </motion.div>
@@ -759,12 +759,12 @@ export default function Home() {
                   <GraduationCap className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">BCB Program</h3>
-                  <p className="text-sm text-gray-400">DeepBio University</p>
+                  <h3 className="text-xl font-bold">BioinfoComBio</h3>
+                  <p className="text-sm text-gray-400">DeepBio Academy</p>
                 </div>
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Transforming the next generation of computational biologists through world-class education, 
+                Transforming the next generation of computational biologists through international standard training, 
                 cutting-edge research, and industry partnerships.
               </p>
               <div className="flex space-x-4">
@@ -860,13 +860,13 @@ export default function Home() {
                 <div className="flex items-start space-x-3">
                   <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p>admissions@deepbio.edu</p>
-                    <p>info@deepbio.edu</p>
+                    <p>academy@deepbioltd.com</p>
+                    <p>admission@deepbioltd.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <p>+880-XXX-XXXXX</p>
+                  <p>+8801843381652</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
@@ -878,7 +878,7 @@ export default function Home() {
 
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; 2024 DeepBio University. All rights reserved.
+              &copy; 2024 DeepBio Limited. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 sm:mt-0 text-sm text-gray-400">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
