@@ -8,13 +8,11 @@ import {
   Menu, X, ChevronDown, Star, Globe, Calendar, Clock, CheckCircle,
   PlayCircle, Download, ExternalLink, Zap, Target, TrendingUp
 } from 'lucide-react';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { scrollY } = useScroll();
-  const headerOpacity = useTransform(scrollY, [0, 100], [0.8, 0.95]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -210,108 +208,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <motion.header 
-        className="fixed top-0 w-full z-50 transition-all duration-300"
-        style={{ 
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.8)',
-          backdropFilter: 'blur(20px)',
-          borderBottom: isScrolled ? '1px solid rgba(0, 0, 0, 0.1)' : 'none'
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-4">
-              <motion.div 
-                className="flex items-center space-x-4 cursor-pointer"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <GraduationCap className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
-                </div>
-                <div>
-                  <h1 className="text-xl font-bold text-gray-900 tracking-tight">BCB Program</h1>
-                  <p className="text-sm text-gray-600 font-medium">DeepBio University</p>
-                </div>
-              </motion.div>
-            </Link>
-
-            <nav className="hidden md:flex items-center space-x-8">
-              {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item, index) => (
-                <motion.a
-                  key={item}
-                  href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `#${item.toLowerCase()}`}
-                  className="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-                  style={{ lineHeight: '1.4', paddingBottom: '0.2em' }}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {item}
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: '100%' }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.a>
-              ))}
-            </nav>
-
-            <div className="hidden md:flex items-center space-x-4">
-              <motion.button
-                className="px-6 py-2.5 text-blue-600 font-semibold border-2 border-blue-600 rounded-full hover:bg-blue-50 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Apply Now
-              </motion.button>
-            </div>
-
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl hover:bg-gray-100 transition-colors"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200"
-            >
-              <div className="px-4 py-6 space-y-4">
-                {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item) => (
-                  <a
-                    key={item}
-                    href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `#${item.toLowerCase()}`}
-                    className="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors"
-                    style={{ lineHeight: '1.4', paddingBottom: '0.2em' }}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item}
-                  </a>
-                ))}
-                <button className="w-full mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors">
-                  Apply Now
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.header>
+      <Navbar isScrolled={isScrolled} />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">

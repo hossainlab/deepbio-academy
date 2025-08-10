@@ -6,39 +6,15 @@ import {
   GraduationCap, Mail, Phone, MapPin, Shield, Lock, Eye, 
   FileText, Users, Clock, ArrowLeft
 } from 'lucide-react';
+import Navbar from '../../components/Navbar';
 
 export default function PrivacyPolicy() {
   const lastUpdated = "January 15, 2024";
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-4">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <GraduationCap className="w-7 h-7 text-white" />
-                </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900 tracking-tight">BCB Program</h1>
-                <p className="text-sm text-gray-600 font-medium">DeepBio University</p>
-              </div>
-            </Link>
-
-            <Link 
-              href="/"
-              className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 font-medium transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              <span>Back to Home</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Navigation */}
+      <Navbar />
 
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
