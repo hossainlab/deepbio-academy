@@ -20,7 +20,11 @@ export const metadata: Metadata = {
   keywords: ["bioinformatics", "computational biology", "training", "education", "data analysis", "genomics", "biology", "professional development"],
   authors: [{ name: "DeepBio Academy" }],
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' }
+    ],
+    apple: '/favicon.svg',
   },
   openGraph: {
     type: 'website',

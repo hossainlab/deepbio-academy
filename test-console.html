@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Error Tester</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .console-output { background: black; color: lime; padding: 10px; margin: 10px 0; font-family: monospace; }
+        .error { color: red; }
+        .warning { color: orange; }
+        .info { color: cyan; }
+    </style>
+</head>
+<body>
+    <h1>Console Error Monitor for localhost:3006</h1>
+    <p>This page will monitor console errors from the Next.js application running on localhost:3006</p>
+    
+    <div id="console-output" class="console-output">
+        <div>Console output will appear here...</div>
+    </div>
+    
+    <iframe id="app-frame" src="http://localhost:3006" width="100%" height="600" style="border: 1px solid #ccc; margin: 20px 0;"></iframe>
+    
+    <script>
+        const consoleOutput = document.getElementById('console-output');
+        const originalConsole = {
+            log: console.log,
+            error: console.error,
+            warn: console.warn,
+            info: console.info
+        };
+        
+        function addToOutput(type, message) {
+            const div = document.createElement('div');
+            div.className = type;
+            div.textContent = `[${new Date().toLocaleTimeString()}] ${type.toUpperCase()}: ${message}`;
+            consoleOutput.appendChild(div);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+        
+        console.log = function(...args) {
+            originalConsole.log.apply(console, args);
+            addToOutput('info', args.join(' '));
+        };
+        
+        console.error = function(...args) {
+            originalConsole.error.apply(console, args);
+            addToOutput('error', args.join(' '));
+        };
+        
+        console.warn = function(...args) {
+            originalConsole.warn.apply(console, args);
+            addToOutput('warning', args.join(' '));
+        };
+        
+        window.addEventListener('error', function(e) {
+            addToOutput('error', `JavaScript Error: ${e.message} at ${e.filename}:${e.lineno}:${e.colno}`);
+        });
+        
+        window.addEventListener('unhandledrejection', function(e) {
+            addToOutput('error', `Unhandled Promise Rejection: ${e.reason}`);
+        });
+        
+        // Monitor iframe for errors
+        const iframe = document.getElementById('app-frame');
+        iframe.onload = function() {
+            try {
+                const iframeWindow = iframe.contentWindow;
+                const iframeDocument = iframe.contentDocument;
+                
+                // Override console methods in iframe
+                if (iframeWindow && iframeWindow.console) {
+                    const iframeConsole = iframeWindow.console;
+                    
+                    iframeConsole.error = function(...args) {
+                        addToOutput('error', `[IFRAME] ${args.join(' ')}`);
+                    };
+                    
+                    iframeConsole.warn = function(...args) {
+                        addToOutput('warning', `[IFRAME] ${args.join(' ')}`);
+                    };
+                    
+                    // Listen for iframe errors
+                    iframeWindow.addEventListener('error', function(e) {
+                        addToOutput('error', `[IFRAME] JavaScript Error: ${e.message} at ${e.filename}:${e.lineno}:${e.colno}`);
+                    });
+                    
+                    iframeWindow.addEventListener('unhandledrejection', function(e) {
+                        addToOutput('error', `[IFRAME] Unhandled Promise Rejection: ${e.reason}`);
+                    });
+                }
+            } catch (e) {
+                addToOutput('warning', 'Cannot access iframe due to CORS restrictions. Errors may not be captured.');
+            }
+        };
+        
+        addToOutput('info', 'Console monitor initialized');
+        addToOutput('info', 'Loading localhost:3006 in iframe...');
+    </script>
+</body>
+</html>

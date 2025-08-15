@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DeepBio Academy Website
+
+Professional training program in Bioinformatics and Computational Biology. This is the official website for DeepBio Academy, built with Next.js.
+
+## About DeepBio Academy
+
+DeepBio Academy offers a comprehensive 42-credit program in Bioinformatics and Computational Biology, designed to prepare students for modern careers in biological data analysis and computational research.
+
+### Program Features
+- 42 credits across four intensive quarters
+- World-class instructors and researchers
+- Hands-on learning with real-world projects  
+- Industry partnerships and mentorship
+- International standard curriculum
 
 ## Getting Started
 
@@ -10,27 +23,46 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/src/app` - Main application pages and components
+- `/src/components` - Reusable React components
+- `/public` - Static assets including images and favicon
+- `/src/app/instructors` - Instructor profiles and information
+- `/src/app/curriculum` - Detailed curriculum information
+- `/src/app/admissions` - Application and admission details
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Responsive Design** - Optimized for all devices
+- **SEO Optimized** - Proper meta tags and structured data
+- **Performance** - Fast loading with Next.js optimizations
+- **Accessibility** - WCAG compliant design
+- **Modern UI** - Built with Tailwind CSS and Framer Motion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The website uses:
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Lucide React** - Icon library
 
-## Deploy on Vercel
+## Academic Calendar Integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The academic calendar is integrated with Google Sheets for easy management and real-time updates.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+- Website: [https://academy.deepbioltd.com](https://academy.deepbioltd.com)
+- Email: academy@deepbioltd.com
+- Phone: +8801843381652
+
+## License
+
+© 2024 DeepBio Limited. All rights reserved.
