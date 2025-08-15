@@ -4,6 +4,7 @@
       "Bash(npm run dev:*)"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "defaultMode": "acceptEdits"
   }
 }

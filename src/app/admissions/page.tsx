@@ -21,10 +21,9 @@ export default function Admissions() {
       details: [
         "Submit completed application form online",
         "Upload academic transcripts (Bachelor's degree required)",
-        "Provide English proficiency test scores (IELTS 6.5+ or TOEFL 80+)",
         "Submit two academic/professional reference letters",
         "Write a statement of purpose (500-1000 words)",
-        "Pay application fee (2,000 BDT)"
+        "Pay application fee (1,000 BDT)"
       ],
       duration: "2-3 weeks",
       icon: <FileText className="w-8 h-8" />,
@@ -101,18 +100,8 @@ export default function Admissions() {
       category: "Academic Requirements",
       items: [
         "Bachelor's degree in Biology, Chemistry, Physics, Computer Science, Mathematics, or related field",
-        "Minimum CGPA of 3.0 on 4.0 scale or equivalent",
         "Strong foundation in mathematics and statistics",
         "Basic programming experience preferred (not mandatory)"
-      ]
-    },
-    {
-      category: "Language Requirements",
-      items: [
-        "IELTS Academic: 6.5 overall with no band below 6.0",
-        "TOEFL iBT: 80 overall with minimum 20 in each section",
-        "Pearson PTE Academic: 58 overall",
-        "Native English speakers are exempt from language tests"
       ]
     },
     {
@@ -123,6 +112,14 @@ export default function Admissions() {
         "Updated CV/Resume",
         "Copy of passport (for international applicants)",
         "Medical fitness certificate"
+      ]
+    },
+    {
+      category: "Special Note for Undergraduates",
+      items: [
+        "Undergraduate students can take this training as a minor alongside their major",
+        "Flexible scheduling available for students enrolled in other programs",
+        "Ideal for students seeking specialized skills in computational biology"
       ]
     }
   ];
@@ -145,7 +142,7 @@ export default function Admissions() {
     {
       icon: <Calendar className="w-8 h-8 text-purple-600" />,
       title: "Application Deadline",
-      value: "March 15, 2024",
+      value: "October 31, 2025",
       description: "Rolling admissions available",
       details: "Early applications recommended for best consideration"
     },
@@ -419,7 +416,7 @@ export default function Admissions() {
                 <div className="space-y-6">
                   <div className="flex items-center justify-between p-4 bg-blue-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Application Fee</span>
-                    <span className="font-bold text-blue-600">৳2,000 BDT</span>
+                    <span className="font-bold text-blue-600">৳1,000 BDT</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Acceptance Fee</span>
@@ -442,7 +439,7 @@ export default function Admissions() {
                 <h4 className="text-2xl font-bold text-gray-900">What's Included</h4>
                 <div className="space-y-4">
                   {[
-                    "36 credits of intensive coursework",
+                    "42 credits of intensive coursework",
                     "Access to cutting-edge computational resources",
                     "Industry mentorship and networking",
                     "Career placement assistance",
@@ -474,7 +471,7 @@ export default function Admissions() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Transform Your Career?</h2>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              Join only 30 selected candidates in this exclusive program. Applications close March 15, 2024.
+              Join only 40 selected candidates in this exclusive program. Applications close October 31, 2025.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
@@ -499,7 +496,7 @@ export default function Admissions() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm">
               <div className="flex items-center space-x-2">
                 <AlertCircle className="w-5 h-5 text-yellow-400" />
-                <span>Early Bird Discount: 20% off until Feb 1, 2024</span>
+                <span>Early Bird Discount: 20% off until September 30, 2025</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-blue-400" />

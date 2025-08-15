@@ -256,7 +256,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-semibold text-gray-800">Applications open in September for 2025‑26</span>
+              <span className="text-sm font-semibold text-gray-800">Applications open September 1, 2025 for 2025‑26</span>
               <ArrowRight className="w-4 h-4 ml-2 text-gray-600" />
             </motion.div>
 
@@ -787,7 +787,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-600">
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2 text-blue-600" />
-                Application Deadline: September 15, 2025
+                Application Deadline: October 31, 2025
               </div>
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
