@@ -289,7 +289,7 @@ export default function Curriculum() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8">
-              World-Class
+              International Standard
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent block">
                 Curriculum
               </span>

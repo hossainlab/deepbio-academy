@@ -205,7 +205,7 @@ export default function Instructors() {
               <motion.div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-blue-600" />
-                  <span>World-Class Instructors</span>
+                  <span>International Standard Instructors</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Globe className="w-5 h-5 text-green-600" />
