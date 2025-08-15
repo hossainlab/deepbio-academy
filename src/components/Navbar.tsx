@@ -17,7 +17,7 @@ export default function Navbar({ isScrolled = false }: NavbarProps) {
   const navigationItems = [
     { name: 'Curriculum', href: '/curriculum' },
     { name: 'Admissions', href: '/admissions' },
-    { name: 'Faculty', href: '/faculty' },
+    { name: 'Instructors', href: '/instructors' },
     { name: 'Academic Policy', href: '/academic-integrity' }
   ];
 

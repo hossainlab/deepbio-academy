@@ -94,7 +94,7 @@ export default function Home() {
           code: "BCB401",
           credits: 6,
           title: "Capstone Project",
-          content: "A significant research project with a faculty mentor from DeepBio Limited. Culminates in a final presentation of findings and methodology.",
+          content: "A significant research project with an instructor mentor from DeepBio Limited. Culminates in a final presentation of findings and methodology.",
           goals: "Independently apply all skills learned throughout the program to a real-world problem, demonstrating professional research capabilities."
         },
         {
@@ -406,7 +406,7 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Program Management Guide</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive framework for administration, faculty, and students
+              Comprehensive framework for administration, instructors, and students
             </p>
           </motion.div>
 
@@ -437,7 +437,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <BookOpen className="w-12 h-12 text-green-600 mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Faculty</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Instructors</h3>
               <ul className="space-y-3 text-gray-600">
                 <li>• Instructional excellence standards</li>
                 <li>• Mentorship responsibilities</li>

@@ -10,250 +10,166 @@ import {
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 
-export default function Faculty() {
+export default function Instructors() {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [expandedFaculty, setExpandedFaculty] = useState<string | null>(null);
+  const [expandedInstructor, setExpandedInstructor] = useState<string | null>(null);
 
-  const facultyCategories = ['All', 'Core Faculty', 'Adjunct Faculty', 'Industry Partners', 'Visiting Scholars'];
+  const instructorCategories = ['All', 'Core Instructors', 'Adjunct Instructors', 'Industry Partners', 'Visiting Scholars'];
 
-  const facultyMembers = [
+  const instructorMembers = [
     {
-      id: 'jubayer-hossain',
-      name: 'Dr. Md. Jubayer Hossain',
-      title: 'Program Director & Founder',
-      category: 'Core Faculty',
+      id: 'incoming-instructor-1',
+      name: 'Incoming Instructor',
+      title: 'Lead Instructor - Computational Biology',
+      category: 'Core Instructors',
       department: 'Computational Biology & Bioinformatics',
-      institution: 'DeepBio University',
+      institution: 'DeepBio Academy',
       image: '/api/placeholder/400/400',
-      email: 'jubayer.hossain@deepbio.edu',
-      phone: '+880-XXX-XXXXX',
-      office: 'Room 301, DeepBio Research Center',
+      email: 'incoming@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
       education: [
-        'Ph.D. in Computational Biology, Harvard University (2018)',
-        'M.S. in Bioinformatics, MIT (2014)',
-        'B.S. in Computer Science, University of Dhaka (2012)'
+        'Ph.D. in Computational Biology (TBA)',
+        'M.S. in Bioinformatics (TBA)',
+        'B.S. in Related Field (TBA)'
       ],
       experience: [
-        'CEO & Founder, DeepBio Limited (2019-Present)',
-        'Executive Director, CHIRAL Bangladesh (2018-Present)',
-        'Postdoctoral Fellow, Broad Institute of MIT & Harvard (2018-2019)',
-        'Research Scientist, Google DeepMind Health (2017-2018)'
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
       ],
       researchInterests: [
         'Machine Learning in Genomics',
         'Computational Drug Discovery',
         'Systems Biology',
-        'Precision Medicine',
-        'AI-driven Protein Design'
+        'Bioinformatics Algorithms'
       ],
       selectedPublications: [
-        'Hossain, M.J. et al. (2023). "Deep Learning Approaches for Protein Structure Prediction." Nature Machine Intelligence, 15(4), 234-251.',
-        'Hossain, M.J., Smith, A.B. (2022). "AI-Powered Drug Discovery: A Computational Framework." Cell Systems, 28(3), 145-162.',
-        'Rahman, S., Hossain, M.J. (2021). "Genomic Data Analysis Using Advanced Statistical Methods." Bioinformatics, 37(12), 1823-1834.'
+        'Publication details - Coming Soon',
+        'Research publications - TBA',
+        'Academic contributions - TBA'
       ],
-      courses: ['BCB101: Foundational Biology', 'BCB301: Machine Learning for Life Sciences', 'BCB401: Capstone Research'],
-      linkedin: 'https://linkedin.com/in/jubayer-hossain',
-      orcid: '0000-0002-1234-5678',
-      googleScholar: 'https://scholar.google.com/citations?user=xyz'
+      courses: ['BCB101: Introduction to Bioinformatics', 'BCB201: Genomics & Transcriptomics', 'BCB401: Capstone Research'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
     },
     {
-      id: 'sarah-chen',
-      name: 'Prof. Sarah Chen',
-      title: 'Professor of Structural Biology',
-      category: 'Core Faculty',
+      id: 'incoming-instructor-2',
+      name: 'Incoming Instructor',
+      title: 'Structural Biology Specialist',
+      category: 'Core Instructors',
       department: 'Structural & Computational Biology',
-      institution: 'MIT & DeepBio University',
+      institution: 'DeepBio Academy',
       image: '/api/placeholder/400/400',
-      email: 'sarah.chen@deepbio.edu',
-      phone: '+1-617-XXX-XXXX',
-      office: 'Room 205, Computational Sciences Building',
+      email: 'incoming@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
       education: [
-        'Ph.D. in Structural Biology, Stanford University (2008)',
-        'M.S. in Biochemistry, Caltech (2004)',
-        'B.S. in Chemistry, UC Berkeley (2002)'
+        'Ph.D. in Structural Biology (TBA)',
+        'M.S. in Biochemistry (TBA)',
+        'B.S. in Chemistry (TBA)'
       ],
       experience: [
-        'Professor, MIT Department of Biology (2018-Present)',
-        'Associate Professor, Harvard Medical School (2014-2018)',
-        'Assistant Professor, Yale University (2010-2014)',
-        'Postdoctoral Fellow, MRC Laboratory of Molecular Biology (2008-2010)'
+        'Research Experience - TBA',
+        'Industry Experience - TBA',
+        'Teaching Experience - TBA'
       ],
       researchInterests: [
         'Protein Structure Prediction',
         'Cryo-EM Structure Determination',
-        'AlphaFold Applications',
         'Drug-Target Interactions',
-        'Membrane Protein Structures'
+        'Structural Bioinformatics'
       ],
       selectedPublications: [
-        'Chen, S. et al. (2023). "Advances in Cryo-EM for Drug Discovery." Nature Reviews Drug Discovery, 22(8), 567-582.',
-        'Chen, S., Johnson, R. (2022). "Structural Basis of Protein-Protein Interactions." Science, 376(6595), 890-895.',
-        'Smith, A., Chen, S. et al. (2021). "Machine Learning in Structural Biology." Cell, 184(15), 4006-4018.'
+        'Publication details - Coming Soon',
+        'Research publications - TBA',
+        'Academic contributions - TBA'
       ],
-      courses: ['BCB202: Structural Bioinformatics', 'BCB302: Deep Learning Applications'],
-      linkedin: 'https://linkedin.com/in/sarah-chen-mit',
-      orcid: '0000-0001-2345-6789',
-      googleScholar: 'https://scholar.google.com/citations?user=abc'
+      courses: ['BCB203: Structural Bioinformatics', 'BCB302: Advanced Methods'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
     },
     {
-      id: 'ahmed-rahman',
-      name: 'Dr. Ahmed Rahman',
-      title: 'Senior Research Scientist',
-      category: 'Adjunct Faculty',
-      department: 'Computational Genetics',
-      institution: 'Harvard Medical School & DeepBio University',
+      id: 'incoming-instructor-3',
+      name: 'Incoming Instructor',
+      title: 'Machine Learning Specialist',
+      category: 'Adjunct Instructors',
+      department: 'Computational Genetics & AI',
+      institution: 'DeepBio Academy',
       image: '/api/placeholder/400/400',
-      email: 'ahmed.rahman@deepbio.edu',
-      phone: '+1-617-XXX-XXXX',
-      office: 'Room 420, Genetics Building',
+      email: 'incoming@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
       education: [
-        'Ph.D. in Population Genetics, University of Oxford (2012)',
-        'M.S. in Statistical Genetics, London School of Hygiene (2008)',
-        'B.S. in Mathematics, Cambridge University (2006)'
+        'Ph.D. in Computational Biology (TBA)',
+        'M.S. in Computer Science (TBA)',
+        'B.S. in Mathematics (TBA)'
       ],
       experience: [
-        'Senior Research Scientist, Harvard Medical School (2018-Present)',
-        'Research Fellow, Wellcome Sanger Institute (2015-2018)',
-        'Postdoctoral Researcher, Broad Institute (2012-2015)'
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
       ],
       researchInterests: [
-        'Population Genomics',
-        'Genetic Epidemiology',
-        'GWAS Methodology',
-        'Ancestry Inference',
-        'Pharmacogenomics'
+        'Machine Learning in Biology',
+        'Deep Learning Applications',
+        'AI-driven Research',
+        'Computational Methods'
       ],
       selectedPublications: [
-        'Rahman, A. et al. (2023). "Large-scale GWAS reveals novel loci for complex diseases." Nature Genetics, 55(7), 789-798.',
-        'Rahman, A., Thompson, K. (2022). "Population Structure in Genomic Studies." Annual Review of Genomics, 23, 145-167.',
-        'Liu, J., Rahman, A. et al. (2021). "Pharmacogenomic Predictions in Diverse Populations." Nature Medicine, 27(4), 456-463.'
+        'Publication details - Coming Soon',
+        'Research publications - TBA',
+        'Academic contributions - TBA'
       ],
-      courses: ['BCB203: Population Genetics', 'BCB102: Statistical Computing'],
-      linkedin: 'https://linkedin.com/in/ahmed-rahman-genetics',
-      orcid: '0000-0003-4567-8901',
-      googleScholar: 'https://scholar.google.com/citations?user=def'
+      courses: ['BCB301: Machine Learning', 'BCB302: Deep Learning'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
     },
     {
-      id: 'maria-rodriguez',
-      name: 'Prof. Maria Rodriguez',
-      title: 'Associate Professor of Systems Biology',
-      category: 'Core Faculty',
+      id: 'incoming-instructor-4',
+      name: 'Incoming Instructor',
+      title: 'Systems Biology Expert',
+      category: 'Core Instructors',
       department: 'Systems Biology & Network Analysis',
-      institution: 'Stanford University & DeepBio University',
+      institution: 'DeepBio Academy',
       image: '/api/placeholder/400/400',
-      email: 'maria.rodriguez@deepbio.edu',
-      phone: '+1-650-XXX-XXXX',
-      office: 'Room 150, Systems Biology Building',
+      email: 'incoming@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
       education: [
-        'Ph.D. in Systems Biology, UCSF (2010)',
-        'M.S. in Computational Biology, Carnegie Mellon (2006)',
-        'B.S. in Bioengineering, UC San Diego (2004)'
+        'Ph.D. in Systems Biology (TBA)',
+        'M.S. in Computational Biology (TBA)',
+        'B.S. in Bioengineering (TBA)'
       ],
       experience: [
-        'Associate Professor, Stanford University (2018-Present)',
-        'Assistant Professor, UC Berkeley (2014-2018)',
-        'Research Scientist, Genentech (2012-2014)',
-        'Postdoctoral Fellow, UCSF (2010-2012)'
+        'Academic Experience - TBA',
+        'Industry Experience - TBA',
+        'Research Experience - TBA'
       ],
       researchInterests: [
         'Multi-omics Integration',
         'Network Biology',
-        'Cancer Systems Biology',
-        'Single-cell Analysis',
+        'Systems Analysis',
         'Biomarker Discovery'
       ],
       selectedPublications: [
-        'Rodriguez, M. et al. (2023). "Integrative Multi-omics Analysis in Cancer." Nature Cancer, 4(6), 445-459.',
-        'Rodriguez, M., Kim, S. (2022). "Network-based Drug Repurposing." Cell Systems, 15(3), 234-248.',
-        'Brown, L., Rodriguez, M. et al. (2021). "Single-cell Multi-omics Reveals Cell Heterogeneity." Nature Biotechnology, 39(8), 987-995.'
+        'Publication details - Coming Soon',
+        'Research publications - TBA',
+        'Academic contributions - TBA'
       ],
       courses: ['BCB201: Genomics & Transcriptomics', 'BCB301: Advanced Data Analysis'],
-      linkedin: 'https://linkedin.com/in/maria-rodriguez-stanford',
-      orcid: '0000-0004-5678-9012',
-      googleScholar: 'https://scholar.google.com/citations?user=ghi'
-    },
-    {
-      id: 'james-liu',
-      name: 'Dr. James Liu',
-      title: 'Principal Scientist',
-      category: 'Industry Partners',
-      department: 'AI Research & Development',
-      institution: 'Google DeepMind & DeepBio University',
-      image: '/api/placeholder/400/400',
-      email: 'james.liu@deepbio.edu',
-      phone: '+44-20-XXXX-XXXX',
-      office: 'Google DeepMind London (Virtual Office)',
-      education: [
-        'Ph.D. in Machine Learning, Carnegie Mellon University (2015)',
-        'M.S. in Computer Science, MIT (2011)',
-        'B.S. in Applied Mathematics, Princeton University (2009)'
-      ],
-      experience: [
-        'Principal Scientist, Google DeepMind (2020-Present)',
-        'Senior Research Scientist, DeepMind Technologies (2017-2020)',
-        'Research Scientist, Facebook AI Research (2015-2017)'
-      ],
-      researchInterests: [
-        'Deep Learning for Biology',
-        'Protein Design & Engineering',
-        'Generative AI in Drug Discovery',
-        'Reinforcement Learning',
-        'Neural Architecture Search'
-      ],
-      selectedPublications: [
-        'Liu, J. et al. (2023). "AlphaFold3: Advancing Protein Structure Prediction." Nature, 620(7974), 456-467.',
-        'Liu, J., Singh, P. (2022). "Generative Models for Molecular Design." Nature Machine Intelligence, 4(8), 678-689.',
-        'Wang, X., Liu, J. et al. (2021). "Deep Reinforcement Learning for Drug Discovery." Cell, 184(20), 5267-5280.'
-      ],
-      courses: ['BCB302: Deep Learning & Generative AI', 'BCB303: Computational Drug Discovery'],
-      linkedin: 'https://linkedin.com/in/james-liu-deepmind',
-      orcid: '0000-0005-6789-0123',
-      googleScholar: 'https://scholar.google.com/citations?user=jkl'
-    },
-    {
-      id: 'emily-thompson',
-      name: 'Dr. Emily Thompson',
-      title: 'Director of Computational Biology',
-      category: 'Visiting Scholars',
-      department: 'Single-cell & Spatial Biology',
-      institution: 'Broad Institute & DeepBio University',
-      image: '/api/placeholder/400/400',
-      email: 'emily.thompson@deepbio.edu',
-      phone: '+1-617-XXX-XXXX',
-      office: 'Room 700, Broad Institute',
-      education: [
-        'Ph.D. in Computational Biology, MIT (2013)',
-        'M.S. in Biostatistics, Harvard T.H. Chan School (2009)',
-        'B.S. in Biology, Caltech (2007)'
-      ],
-      experience: [
-        'Director of Computational Biology, Broad Institute (2021-Present)',
-        'Group Leader, Broad Institute (2018-2021)',
-        'Principal Scientist, 10x Genomics (2015-2018)',
-        'Postdoctoral Fellow, MIT (2013-2015)'
-      ],
-      researchInterests: [
-        'Single-cell RNA Sequencing',
-        'Spatial Transcriptomics',
-        'Cancer Genomics',
-        'Cell Atlas Construction',
-        'Developmental Biology'
-      ],
-      selectedPublications: [
-        'Thompson, E. et al. (2023). "Spatial Atlas of Human Development." Science, 382(6667), 234-247.',
-        'Thompson, E., Davis, M. (2022). "Single-cell Analysis of Tumor Microenvironment." Nature Medicine, 28(9), 1245-1258.',
-        'Clark, R., Thompson, E. et al. (2021). "Developmental Cell Atlas Using Single-cell Sequencing." Cell, 185(18), 3456-3471.'
-      ],
-      courses: ['BCB201: Advanced Genomics', 'BCB401: Research Methods'],
-      linkedin: 'https://linkedin.com/in/emily-thompson-broad',
-      orcid: '0000-0006-7890-1234',
-      googleScholar: 'https://scholar.google.com/citations?user=mno'
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
     }
   ];
 
-  const filteredFaculty = selectedCategory === 'All' 
-    ? facultyMembers 
-    : facultyMembers.filter(faculty => faculty.category === selectedCategory);
+  const filteredInstructors = selectedCategory === 'All' 
+    ? instructorMembers 
+    : instructorMembers.filter(instructor => instructor.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-white">
@@ -277,19 +193,19 @@ export default function Faculty() {
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8">
               Distinguished
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent block">
-                Faculty & Researchers
+                Instructors & Researchers
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
-              Learn from world-renowned experts, industry leaders, and pioneering researchers 
-              at the forefront of computational biology and bioinformatics.
+              We are assembling a world-class team of instructors and researchers. 
+              Meet our incoming expert instructors who will guide your learning journey.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-blue-600" />
-                  <span>World-Class Faculty</span>
+                  <span>World-Class Instructors</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Globe className="w-5 h-5 text-green-600" />
@@ -305,11 +221,11 @@ export default function Faculty() {
         </div>
       </section>
 
-      {/* Faculty Categories */}
+      {/* Instructor Categories */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {facultyCategories.map((category) => (
+            {instructorCategories.map((category) => (
               <motion.button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
@@ -328,13 +244,13 @@ export default function Faculty() {
         </div>
       </section>
 
-      {/* Faculty Profiles */}
+      {/* Instructor Profiles */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8">
-            {filteredFaculty.map((faculty, index) => (
+            {filteredInstructors.map((instructor, index) => (
               <motion.div
-                key={faculty.id}
+                key={instructor.id}
                 className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -348,7 +264,7 @@ export default function Faculty() {
                       <div className="relative mb-6">
                         <div className="w-48 h-48 mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 border-4 border-white shadow-lg">
                           <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-4xl font-bold">
-                            {faculty.name.split(' ').map(n => n[0]).join('')}
+                            {instructor.name.split(' ').map(n => n[0]).join('')}
                           </div>
                         </div>
                       </div>
@@ -356,21 +272,21 @@ export default function Faculty() {
                       <div className="space-y-3 text-center lg:text-left">
                         <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
                           <Building className="w-4 h-4" />
-                          <span>{faculty.institution}</span>
+                          <span>{instructor.institution}</span>
                         </div>
                         <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
                           <Mail className="w-4 h-4" />
-                          <a href={`mailto:${faculty.email}`} className="text-blue-600 hover:underline">{faculty.email}</a>
+                          <a href={`mailto:${instructor.email}`} className="text-blue-600 hover:underline">{instructor.email}</a>
                         </div>
                         <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
                           <MapPin className="w-4 h-4" />
-                          <span>{faculty.office}</span>
+                          <span>{instructor.office}</span>
                         </div>
                       </div>
 
                       {/* Social Links */}
                       <div className="mt-6 flex justify-center lg:justify-start">
-                        <a href={faculty.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors shadow-lg" title="LinkedIn Profile">
+                        <a href={instructor.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors shadow-lg" title="LinkedIn Profile">
                           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                           </svg>
@@ -378,14 +294,14 @@ export default function Faculty() {
                       </div>
                     </div>
                     
-                    {/* Faculty Information */}
+                    {/* Instructor Information */}
                     <div className="lg:w-3/4">
                       <div className="mb-6">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-2">{faculty.name}</h2>
-                        <p className="text-xl text-blue-600 font-semibold mb-2">{faculty.title}</p>
-                        <p className="text-lg text-gray-600 mb-4">{faculty.department}</p>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-2">{instructor.name}</h2>
+                        <p className="text-xl text-blue-600 font-semibold mb-2">{instructor.title}</p>
+                        <p className="text-lg text-gray-600 mb-4">{instructor.department}</p>
                         <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                          {faculty.category}
+                          {instructor.category}
                         </span>
                       </div>
 
@@ -393,7 +309,7 @@ export default function Faculty() {
                       <div className="mb-6">
                         <h3 className="text-lg font-bold text-gray-900 mb-3">Research Interests</h3>
                         <div className="flex flex-wrap gap-2">
-                          {faculty.researchInterests.map((interest) => (
+                          {instructor.researchInterests.map((interest) => (
                             <span key={interest} className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">
                               {interest}
                             </span>
@@ -405,7 +321,7 @@ export default function Faculty() {
                       <div className="mb-6">
                         <h3 className="text-lg font-bold text-gray-900 mb-3">Courses Teaching</h3>
                         <div className="grid md:grid-cols-2 gap-2">
-                          {faculty.courses.map((course) => (
+                          {instructor.courses.map((course) => (
                             <div key={course} className="flex items-center space-x-2 text-sm text-gray-700">
                               <BookOpen className="w-4 h-4 text-blue-500" />
                               <span>{course}</span>
@@ -417,13 +333,13 @@ export default function Faculty() {
                       {/* Expandable Sections */}
                       <div className="space-y-4">
                         <motion.button
-                          onClick={() => setExpandedFaculty(expandedFaculty === faculty.id ? null : faculty.id)}
+                          onClick={() => setExpandedInstructor(expandedInstructor === instructor.id ? null : instructor.id)}
                           className="flex items-center justify-between w-full p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
                           whileHover={{ scale: 1.02 }}
                         >
                           <span className="font-semibold text-gray-900">View Detailed Profile</span>
                           <motion.div
-                            animate={{ rotate: expandedFaculty === faculty.id ? 90 : 0 }}
+                            animate={{ rotate: expandedInstructor === instructor.id ? 90 : 0 }}
                             transition={{ duration: 0.3 }}
                           >
                             <ChevronRight className="w-5 h-5 text-gray-600" />
@@ -431,7 +347,7 @@ export default function Faculty() {
                         </motion.button>
 
                         <AnimatePresence>
-                          {expandedFaculty === faculty.id && (
+                          {expandedInstructor === instructor.id && (
                             <motion.div
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: 'auto', opacity: 1 }}
@@ -444,7 +360,7 @@ export default function Faculty() {
                                 <div>
                                   <h4 className="text-lg font-bold text-gray-900 mb-3">Education</h4>
                                   <div className="space-y-2">
-                                    {faculty.education.map((edu, index) => (
+                                    {instructor.education.map((edu, index) => (
                                       <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
                                         <GraduationCap className="w-4 h-4 text-blue-500 mt-0.5" />
                                         <span>{edu}</span>
@@ -457,7 +373,7 @@ export default function Faculty() {
                                 <div>
                                   <h4 className="text-lg font-bold text-gray-900 mb-3">Professional Experience</h4>
                                   <div className="space-y-2">
-                                    {faculty.experience.map((exp, index) => (
+                                    {instructor.experience.map((exp, index) => (
                                       <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
                                         <Building className="w-4 h-4 text-green-500 mt-0.5" />
                                         <span>{exp}</span>
@@ -471,7 +387,7 @@ export default function Faculty() {
                                 <div>
                                   <h4 className="text-lg font-bold text-gray-900 mb-3">Selected Publications</h4>
                                   <div className="space-y-3">
-                                    {faculty.selectedPublications.map((pub, index) => (
+                                    {instructor.selectedPublications.map((pub, index) => (
                                       <div key={index} className="p-3 bg-white rounded-lg shadow-sm">
                                         <p className="text-sm text-gray-800 leading-relaxed">{pub}</p>
                                       </div>
@@ -503,7 +419,7 @@ export default function Faculty() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Learn from the Best?</h2>
             <p className="text-xl text-gray-300 mb-12">
-              Join our exclusive program and receive mentorship from world-renowned faculty and industry experts.
+              Join our exclusive program and receive mentorship from world-renowned instructors and industry experts.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -513,7 +429,7 @@ export default function Faculty() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Users className="w-6 h-6" />
-                <span>Meet Our Faculty</span>
+                <span>Meet Our Instructors</span>
               </motion.button>
               <motion.a
                 href="/admissions"
@@ -626,7 +542,7 @@ export default function Faculty() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3 text-gray-400">
-                {['Program Overview', 'Curriculum', 'Admissions', 'Faculty', 'Career Services', 'Student Life'].map((link) => (
+                {['Program Overview', 'Curriculum', 'Admissions', 'Instructors', 'Career Services', 'Student Life'].map((link) => (
                   <li key={link}>
                     <a href="#" className="hover:text-white transition-colors">{link}</a>
                   </li>

@@ -46,7 +46,7 @@ export default function AcademicCalendar({ showFilters = true, compact = false, 
       time: '09:00 AM - 12:00 PM',
       type: 'orientation',
       category: 'General',
-      description: 'Welcome ceremony, program overview, meet your cohort and faculty',
+      description: 'Welcome ceremony, program overview, meet your cohort and instructors',
       location: 'DeepBio Campus, Main Auditorium',
       isImportant: true,
       status: 'completed'

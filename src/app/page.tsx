@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
   BookOpen, Users, Award, ArrowRight, Mail, Phone, MapPin, GraduationCap, 
@@ -9,7 +9,6 @@ import {
   PlayCircle, Download, ExternalLink, Zap, Target, TrendingUp
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import AcademicCalendar from '../components/AcademicCalendar';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
@@ -32,26 +31,35 @@ export default function Home() {
           code: "BCB101",
           credits: 3,
           title: "Introduction to Bioinformatics and Computational Biology",
-          content: "Foundational concepts in bioinformatics and computational biology. Overview of molecular biology, genomics, and data analysis. Introduction to major databases (NCBI, EBI, UniProt) and their applications in biological research.",
-          goals: "Develop a comprehensive understanding of the field and learn to navigate key biological databases and resources.",
-          difficulty: "Beginner",
+          content: "Advanced concepts in genetics, gene expression, and epigenetics. In-depth study of genomics, transcriptomics, proteomics, and single-cell sequencing. Practical use of NCBI, EBI, UniProt databases.",
+          goals: "Develop a strong understanding of molecular biology and 'omics technologies, and learn to navigate key biological databases.",
+          difficulty: "Intermediate",
           duration: "12 weeks"
         },
         {
           code: "BCB102",
           credits: 3,
           title: "Programming and Statistical Computing for Life Sciences",
-          content: "Python programming for biological data analysis using Pandas, NumPy, and BioPython. Statistical computing with R for life sciences applications. Version control with Git and GitHub for collaborative research.",
-          goals: "Master essential programming and statistical skills tailored for biological data analysis and collaborative scientific computing.",
+          content: "Advanced Python scripting for data manipulation (Pandas, NumPy, BioPython). Statistical computing with R. Mandatory use of Git and GitHub for version control.",
+          goals: "Master essential programming skills in Python and R for data analysis, and establish a foundation in collaborative software development.",
           difficulty: "Intermediate",
           duration: "12 weeks"
         },
         {
           code: "BCB103",
           credits: 3,
-          title: "Command Line Tools and Workflow Automation in Bioinformatics",
-          content: "Unix/Linux command line proficiency for bioinformatics. Workflow management systems and pipeline automation. Shell scripting and task automation for high-throughput biological data processing.",
-          goals: "Develop expertise in command-line bioinformatics tools and automated workflow design for efficient data processing.",
+          title: "Mathematics for Bioinformatics and Computational Biology",
+          content: "In-depth exploration of key databases and programmatic access via APIs. Hands-on work with standard data formats like FASTA, FASTQ, and VCF.",
+          goals: "Gain proficiency in accessing, parsing, and managing diverse biological data formats, and learn to automate data retrieval.",
+          difficulty: "Beginner",
+          duration: "12 weeks"
+        },
+        {
+          code: "BCB104",
+          credits: 2,
+          title: "Semester Project I",
+          content: "First semester capstone project applying foundational concepts learned in BCB101-103. Students work individually or in small groups on a bioinformatics problem.",
+          goals: "Apply foundational knowledge to solve a real-world bioinformatics problem and develop project management skills.",
           difficulty: "Intermediate",
           duration: "12 weeks"
         }
@@ -67,8 +75,8 @@ export default function Home() {
           code: "BCB201",
           credits: 3,
           title: "Genomics, Proteomics and Transcriptomics",
-          content: "Comprehensive analysis of omics data including genomic sequencing, RNA-seq transcriptomics, and proteomics. Quality control, alignment, assembly, and differential expression analysis using tools like DESeq2, EdgeR, and proteomics pipelines.",
-          goals: "Master the analysis of multi-omics datasets and develop expertise in integrating genomic, transcriptomic, and proteomic data for biological insights.",
+          content: "Comprehensive workflows for read quality control, alignment, and assembly. Differential expression analysis of RNA-seq data using DESeq2 and EdgeR.",
+          goals: "Design and execute complete bioinformatics pipelines for NGS data, from raw reads to meaningful biological insights.",
           difficulty: "Advanced",
           duration: "12 weeks"
         },
@@ -76,17 +84,26 @@ export default function Home() {
           code: "BCB202",
           credits: 3,
           title: "Metagenomics and Microbiome Data Analysis",
-          content: "Analysis of complex microbial communities using metagenomics approaches. Taxonomic classification, functional annotation, diversity analysis, and comparative metagenomics. Tools for microbiome data processing and statistical analysis.",
-          goals: "Master the analysis of metagenomic data and develop expertise in microbiome research methodologies and interpretation of microbial community dynamics.",
+          content: "Analysis of microbial communities through metagenomic sequencing. Taxonomic profiling, functional annotation, and comparative microbiome analysis.",
+          goals: "Understand microbiome analysis workflows and interpret microbial community structure and function.",
           difficulty: "Advanced",
           duration: "12 weeks"
         },
         {
           code: "BCB203",
           credits: 3,
-          title: "Machine Learning in Computational Biology",
-          content: "Application of machine learning algorithms to biological data. Supervised and unsupervised learning, feature selection, model validation, and interpretation. Use cases in genomics, drug discovery, and personalized medicine.",
-          goals: "Apply machine learning techniques to solve complex biological problems and develop predictive models for biological systems and biomedical applications.",
+          title: "Structural Bioinformatics: Molecular Modeling and Simulation",
+          content: "Protein structure prediction, molecular docking, and molecular dynamics simulations. Understanding protein-drug interactions and structure-function relationships.",
+          goals: "Master computational structural biology techniques for understanding protein function and drug design.",
+          difficulty: "Intermediate",
+          duration: "12 weeks"
+        },
+        {
+          code: "BCB204",
+          credits: 2,
+          title: "Semester Project II",
+          content: "Second semester project building on advanced analysis techniques. Focus on genomics, proteomics, or structural bioinformatics applications.",
+          goals: "Apply intermediate bioinformatics skills to complex biological problems and develop advanced analytical thinking.",
           difficulty: "Advanced",
           duration: "12 weeks"
         }
@@ -101,7 +118,7 @@ export default function Home() {
         {
           code: "BCB301",
           credits: 3,
-          title: "Machine Learning for Life Sciences",
+          title: "Machine Learning in Computational Biology",
           content: "Supervised and unsupervised learning models for biological data. Feature engineering, model validation, and ethical considerations in biomedical ML.",
           goals: "Apply machine learning algorithms to solve biological problems, from disease classification to biomarker discovery.",
           difficulty: "Advanced",
@@ -110,7 +127,7 @@ export default function Home() {
         {
           code: "BCB302",
           credits: 3,
-          title: "Deep Learning and Generative AI",
+          title: "Computational Systems Biology: Deep Learning in the Life Sciences",
           content: "Understanding CNNs, RNNs, and Transformers. Applications of Generative AI to design novel proteins and optimize drug candidates.",
           goals: "Develop deep learning models for complex biological data and leverage Generative AI for innovative research.",
           difficulty: "Expert",
@@ -119,10 +136,19 @@ export default function Home() {
         {
           code: "BCB303",
           credits: 3,
-          title: "Computational Drug Discovery",
-          content: "Molecular docking and virtual screening. Molecular dynamics simulations to understand drug-protein interactions and ADMET prediction.",
-          goals: "Utilize computational methods to accelerate drug discovery, from identifying lead compounds to simulating interactions.",
+          title: "Generative AI for Life Sciences",
+          content: "Application of generative AI models for drug discovery, protein design, and biological sequence generation. Large language models in biology.",
+          goals: "Master generative AI techniques for innovative biological research and drug discovery applications.",
           difficulty: "Advanced",
+          duration: "12 weeks"
+        },
+        {
+          code: "BCB304",
+          credits: 2,
+          title: "Semester Project III",
+          content: "Advanced research project incorporating machine learning and AI techniques. Students tackle complex biological problems using cutting-edge computational methods.",
+          goals: "Demonstrate mastery of advanced computational biology techniques and ability to innovate in the field.",
+          difficulty: "Expert",
           duration: "12 weeks"
         }
       ]
@@ -137,7 +163,7 @@ export default function Home() {
           code: "BCB401",
           credits: 6,
           title: "Capstone Research Project",
-          content: "A significant research project with a faculty mentor from DeepBio Limited. Students work on cutting-edge problems in collaboration with industry partners.",
+          content: "A significant research project with an instructor mentor from DeepBio Limited. Students work on cutting-edge problems in collaboration with industry partners.",
           goals: "Independently apply all skills learned throughout the program to a real-world problem, demonstrating professional research capabilities.",
           difficulty: "Expert",
           duration: "12 weeks"
@@ -157,7 +183,7 @@ export default function Home() {
 
   const stats = [
     { number: "100%", label: "Employment Rate", description: "within 6 months" },
-    { number: "36", label: "Credits", description: "internationally recognized" },
+    { number: "42", label: "Credits", description: "internationally recognized" },
     { number: "3+", label: "Industry Partners", description: "for internships" },
     { number: "24/7", label: "Support", description: "technical assistance" }
   ];
@@ -488,7 +514,7 @@ export default function Home() {
               International Standard Curriculum
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              36 credits across four intensive quarters, designed by industry experts and updated annually
+              42 credits across four intensive quarters, designed by industry experts and updated annually
             </p>
           </motion.div>
 
@@ -622,22 +648,27 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <motion.a
-                  href="/academic-calendar"
+                  href="https://docs.google.com/spreadsheets/d/1pIDFq1UkoXbtE55Sm92zaKxVOx436Iv-rM6C7M3ufF0/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Calendar className="w-5 h-5" />
-                  <span>View Full Calendar</span>
+                  <span>View Academic Calendar</span>
                 </motion.a>
-                <motion.button
+                <motion.a
+                  href="https://docs.google.com/spreadsheets/d/1pIDFq1UkoXbtE55Sm92zaKxVOx436Iv-rM6C7M3ufF0/export?format=pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-gray-300 text-gray-700 font-bold rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Download className="w-5 h-5" />
                   <span>Download Calendar</span>
-                </motion.button>
+                </motion.a>
               </motion.div>
             </motion.div>
             
@@ -646,8 +677,26 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100"
             >
-              <AcademicCalendar compact={true} showFilters={false} />
+              <div className="text-center">
+                <Calendar className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Academic Calendar</h3>
+                <p className="text-gray-600 mb-6">
+                  Access our comprehensive academic calendar with all important dates, deadlines, and events.
+                </p>
+                <motion.a
+                  href="https://docs.google.com/spreadsheets/d/1pIDFq1UkoXbtE55Sm92zaKxVOx436Iv-rM6C7M3ufF0/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 space-x-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  <span>Open Calendar</span>
+                </motion.a>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -846,7 +895,7 @@ export default function Home() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3 text-gray-400">
-                {['Program Overview', 'Curriculum', 'Admissions', 'Faculty', 'Career Services', 'Student Life'].map((link) => (
+                {['Program Overview', 'Curriculum', 'Admissions', 'Instructors', 'Career Services', 'Student Life'].map((link) => (
                   <li key={link}>
                     <a href="#" className="hover:text-white transition-colors">{link}</a>
                   </li>

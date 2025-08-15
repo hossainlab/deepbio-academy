@@ -156,10 +156,10 @@ export default function AcademicIntegrity() {
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8">
-              {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item, index) => (
+              {['Curriculum', 'Admissions', 'Instructors', 'Academic Policy'].map((item, index) => (
                 <motion.a
                   key={item}
-                  href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `/#${item.toLowerCase()}`}
+                  href={item === 'Admissions' ? '/admissions' : item === 'Instructors' ? '/instructors' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `/#${item.toLowerCase()}`}
                   className={`relative font-medium transition-colors duration-300 py-2 ${
                     item === 'Academic Policy' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                   }`}
@@ -211,10 +211,10 @@ export default function AcademicIntegrity() {
               className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200"
             >
               <div className="px-4 py-6 space-y-4">
-                {['Curriculum', 'Admissions', 'Faculty', 'Academic Policy'].map((item) => (
+                {['Curriculum', 'Admissions', 'Instructors', 'Academic Policy'].map((item) => (
                   <a
                     key={item}
-                    href={item === 'Admissions' ? '/admissions' : item === 'Faculty' ? '/faculty' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `/#${item.toLowerCase()}`}
+                    href={item === 'Admissions' ? '/admissions' : item === 'Instructors' ? '/instructors' : item === 'Curriculum' ? '/curriculum' : item === 'Academic Policy' ? '/academic-integrity' : `/#${item.toLowerCase()}`}
                     className={`block font-medium py-2 transition-colors ${
                       item === 'Academic Policy' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                     }`}
@@ -396,7 +396,7 @@ export default function AcademicIntegrity() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Questions About Academic Integrity?</h2>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              When in doubt, ask! Our faculty and academic advisors are here to help you navigate ethical challenges and maintain the highest standards of academic integrity.
+              When in doubt, ask! Our instructors and academic advisors are here to help you navigate ethical challenges and maintain the highest standards of academic integrity.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
@@ -527,7 +527,7 @@ export default function AcademicIntegrity() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3 text-gray-400">
-                {['Program Overview', 'Curriculum', 'Admissions', 'Faculty', 'Career Services', 'Student Life'].map((link) => (
+                {['Program Overview', 'Curriculum', 'Admissions', 'Instructors', 'Career Services', 'Student Life'].map((link) => (
                   <li key={link}>
                     <a href="#" className="hover:text-white transition-colors">{link}</a>
                   </li>

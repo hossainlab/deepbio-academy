@@ -138,7 +138,7 @@ export default function Admissions() {
     {
       icon: <Users className="w-8 h-8 text-blue-600" />,
       title: "Available Seats",
-      value: "30 Seats",
+      value: "40 Seats",
       description: "Limited enrollment for personalized attention",
       details: "Small cohort ensures quality mentorship and peer interaction"
     },
@@ -503,7 +503,7 @@ export default function Admissions() {
               </div>
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-blue-400" />
-                <span>Limited to 30 seats only</span>
+                <span>Limited to 40 seats only</span>
               </div>
             </div>
           </motion.div>
@@ -607,7 +607,7 @@ export default function Admissions() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3 text-gray-400">
-                {['Program Overview', 'Curriculum', 'Admissions', 'Faculty', 'Career Services', 'Student Life'].map((link) => (
+                {['Program Overview', 'Curriculum', 'Admissions', 'Instructors', 'Career Services', 'Student Life'].map((link) => (
                   <li key={link}>
                     <a href="#" className="hover:text-white transition-colors">{link}</a>
                   </li>

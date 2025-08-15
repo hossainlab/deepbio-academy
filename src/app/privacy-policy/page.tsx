@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
                     <li>• Course enrollment and academic performance</li>
                     <li>• Assignment submissions and project work</li>
                     <li>• Participation in program activities</li>
-                    <li>• Communication with faculty and staff</li>
+                    <li>• Communication with instructors and staff</li>
                   </ul>
                 </div>
               </div>
@@ -300,7 +300,7 @@ export default function PrivacyPolicy() {
               <ul className="space-y-3 text-gray-400">
                 <li><Link href="/curriculum" className="hover:text-white transition-colors">Curriculum</Link></li>
                 <li><Link href="/admissions" className="hover:text-white transition-colors">Admissions</Link></li>
-                <li><Link href="/faculty" className="hover:text-white transition-colors">Faculty</Link></li>
+                <li><Link href="/instructors" className="hover:text-white transition-colors">Instructors</Link></li>
                 <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               </ul>
             </div>

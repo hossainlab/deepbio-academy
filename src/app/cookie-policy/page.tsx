@@ -394,7 +394,7 @@ export default function CookiePolicy() {
               <ul className="space-y-3 text-gray-400">
                 <li><Link href="/curriculum" className="hover:text-white transition-colors">Curriculum</Link></li>
                 <li><Link href="/admissions" className="hover:text-white transition-colors">Admissions</Link></li>
-                <li><Link href="/faculty" className="hover:text-white transition-colors">Faculty</Link></li>
+                <li><Link href="/instructors" className="hover:text-white transition-colors">Instructors</Link></li>
                 <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               </ul>
             </div>

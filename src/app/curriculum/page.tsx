@@ -20,7 +20,7 @@ export default function Curriculum() {
       description: "Build your foundational knowledge in molecular biology and computational methods",
       icon: "🧬",
       duration: "12 weeks",
-      totalCredits: 9,
+      totalCredits: 11,
       learningOutcomes: [
         "Master fundamental concepts in molecular biology and genetics",
         "Develop proficiency in Python and R programming languages",
@@ -31,7 +31,7 @@ export default function Curriculum() {
         {
           code: "BCB101",
           credits: 3,
-          title: "Foundational Biology for Bioinformatics",
+          title: "Introduction to Bioinformatics and Computational Biology",
           content: "Advanced concepts in genetics, gene expression, and epigenetics. In-depth study of genomics, transcriptomics, proteomics, and single-cell sequencing. Practical use of NCBI, EBI, UniProt databases.",
           goals: "Develop a strong understanding of molecular biology and 'omics technologies, and learn to navigate key biological databases.",
           difficulty: "Intermediate",
@@ -44,7 +44,7 @@ export default function Curriculum() {
         {
           code: "BCB102",
           credits: 3,
-          title: "Programming and Statistical Computing",
+          title: "Programming and Statistical Computing for Life Sciences",
           content: "Advanced Python scripting for data manipulation (Pandas, NumPy, BioPython). Statistical computing with R. Mandatory use of Git and GitHub for version control.",
           goals: "Master essential programming skills in Python and R for data analysis, and establish a foundation in collaborative software development.",
           difficulty: "Intermediate",
@@ -57,7 +57,7 @@ export default function Curriculum() {
         {
           code: "BCB103",
           credits: 3,
-          title: "Biological Databases and Data Retrieval",
+          title: "Mathematics for Bioinformatics and Computational Biology",
           content: "In-depth exploration of key databases and programmatic access via APIs. Hands-on work with standard data formats like FASTA, FASTQ, and VCF.",
           goals: "Gain proficiency in accessing, parsing, and managing diverse biological data formats, and learn to automate data retrieval.",
           difficulty: "Beginner",
@@ -66,6 +66,19 @@ export default function Curriculum() {
           assessments: ["Database Project (40%)", "API Integration Assignment (30%)", "Data Format Analysis (20%)", "Documentation (10%)"],
           textbooks: ["Bioinformatics Data Skills (Buffalo)", "Biological Sequence Analysis (Durbin et al.)"],
           software: ["REST APIs", "BioPython", "Entrez Programming Utilities", "Galaxy"]
+        },
+        {
+          code: "BCB104",
+          credits: 2,
+          title: "Semester Project I",
+          content: "First semester capstone project applying foundational concepts learned in BCB101-103. Students work individually or in small groups on a bioinformatics problem.",
+          goals: "Apply foundational knowledge to solve a real-world bioinformatics problem and develop project management skills.",
+          difficulty: "Intermediate",
+          duration: "12 weeks",
+          prerequisites: "BCB101, BCB102, BCB103 (concurrent)",
+          assessments: ["Project Proposal (20%)", "Progress Reports (30%)", "Final Presentation (25%)", "Code/Analysis Quality (25%)"],
+          textbooks: ["Project-specific literature", "The Craft of Research (Booth et al.)"],
+          software: ["Git/GitHub", "Python", "R", "Project-specific tools"]
         }
       ]
     },
@@ -75,7 +88,7 @@ export default function Curriculum() {
       description: "Master essential bioinformatics analysis techniques and workflows",
       icon: "⚗️",
       duration: "12 weeks",
-      totalCredits: 9,
+      totalCredits: 11,
       learningOutcomes: [
         "Design and execute complete NGS data analysis pipelines",
         "Perform differential gene expression analysis",
@@ -99,28 +112,41 @@ export default function Curriculum() {
         {
           code: "BCB202",
           credits: 3,
-          title: "Structural and Evolutionary Bioinformatics",
-          content: "Principles of protein folding and structural prediction. Hands-on use of modern tools like AlphaFold and molecular visualization software.",
-          goals: "Understand protein structure and evolution, using cutting-edge computational tools for structural analysis.",
+          title: "Metagenomics and Microbiome Data Analysis",
+          content: "Analysis of microbial communities through metagenomic sequencing. Taxonomic profiling, functional annotation, and comparative microbiome analysis.",
+          goals: "Understand microbiome analysis workflows and interpret microbial community structure and function.",
           difficulty: "Advanced",
           duration: "12 weeks",
           prerequisites: "BCB101, BCB103",
-          assessments: ["Structure Prediction Project (35%)", "Evolutionary Analysis (30%)", "Software Proficiency (25%)", "Literature Review (10%)"],
-          textbooks: ["Protein Structure Prediction (Xu et al.)", "Molecular Evolution (Li)"],
-          software: ["PyMOL", "ChimeraX", "AlphaFold", "BLAST", "MUSCLE", "RAxML"]
+          assessments: ["Microbiome Analysis Project (40%)", "Taxonomic Profiling (30%)", "Functional Analysis (20%)", "Literature Review (10%)"],
+          textbooks: ["Microbiome Analysis Handbook", "Metagenomics Methods (Knight et al.)"],
+          software: ["QIIME2", "MetaPhlAn", "HUMAnN", "Kraken2", "MEGA-HIT", "R packages"]
         },
         {
           code: "BCB203",
           credits: 3,
-          title: "Variant Calling and Population Genetics",
-          content: "Introduction to genetic variation. Comprehensive variant calling pipelines using tools like GATK. Population genetics analysis.",
-          goals: "Understand and identify genetic variations from sequencing data, and interpret their impact in population genetics context.",
+          title: "Structural Bioinformatics: Molecular Modeling and Simulation",
+          content: "Protein structure prediction, molecular docking, and molecular dynamics simulations. Understanding protein-drug interactions and structure-function relationships.",
+          goals: "Master computational structural biology techniques for understanding protein function and drug design.",
           difficulty: "Intermediate",
           duration: "12 weeks",
           prerequisites: "BCB102, BCB103",
-          assessments: ["Variant Analysis Project (40%)", "Population Study (30%)", "Statistical Analysis (20%)", "Ethics Essay (10%)"],
-          textbooks: ["Population Genetics (Hartl & Clark)", "Variant Calling Handbook (GATK Team)"],
-          software: ["GATK", "bcftools", "PLINK", "VCFtools", "ADMIXTURE", "TreeMix"]
+          assessments: ["Structure Prediction Project (35%)", "Docking Analysis (30%)", "MD Simulation (25%)", "Literature Review (10%)"],
+          textbooks: ["Protein Structure Prediction (Xu et al.)", "Molecular Modeling (Leach)"],
+          software: ["PyMOL", "ChimeraX", "AlphaFold", "AutoDock", "GROMACS", "VMD"]
+        },
+        {
+          code: "BCB204",
+          credits: 2,
+          title: "Semester Project II",
+          content: "Second semester project building on advanced analysis techniques. Focus on genomics, proteomics, or structural bioinformatics applications.",
+          goals: "Apply intermediate bioinformatics skills to complex biological problems and develop advanced analytical thinking.",
+          difficulty: "Advanced",
+          duration: "12 weeks",
+          prerequisites: "BCB201, BCB202, BCB203 (concurrent)",
+          assessments: ["Project Proposal (15%)", "Progress Reports (35%)", "Final Presentation (25%)", "Technical Report (25%)"],
+          textbooks: ["Project-specific literature", "Scientific Writing and Communication"],
+          software: ["Advanced analysis tools", "Visualization software", "Statistical packages"]
         }
       ]
     },
@@ -130,7 +156,7 @@ export default function Curriculum() {
       description: "Harness the power of artificial intelligence in biological research",
       icon: "🤖",
       duration: "12 weeks",
-      totalCredits: 9,
+      totalCredits: 11,
       learningOutcomes: [
         "Apply machine learning algorithms to biological problems",
         "Develop deep learning models for complex biological data",
@@ -141,7 +167,7 @@ export default function Curriculum() {
         {
           code: "BCB301",
           credits: 3,
-          title: "Machine Learning for Life Sciences",
+          title: "Machine Learning in Computational Biology",
           content: "Supervised and unsupervised learning models for biological data. Feature engineering, model validation, and ethical considerations in biomedical ML.",
           goals: "Apply machine learning algorithms to solve biological problems, from disease classification to biomarker discovery.",
           difficulty: "Advanced",
@@ -154,7 +180,7 @@ export default function Curriculum() {
         {
           code: "BCB302",
           credits: 3,
-          title: "Deep Learning and Generative AI",
+          title: "Computational Systems Biology: Deep Learning in the Life Sciences",
           content: "Understanding CNNs, RNNs, and Transformers. Applications of Generative AI to design novel proteins and optimize drug candidates.",
           goals: "Develop deep learning models for complex biological data and leverage Generative AI for innovative research.",
           difficulty: "Expert",
@@ -167,15 +193,28 @@ export default function Curriculum() {
         {
           code: "BCB303",
           credits: 3,
-          title: "Computational Drug Discovery",
-          content: "Molecular docking and virtual screening. Molecular dynamics simulations to understand drug-protein interactions and ADMET prediction.",
-          goals: "Utilize computational methods to accelerate drug discovery, from identifying lead compounds to simulating interactions.",
+          title: "Generative AI for Life Sciences",
+          content: "Application of generative AI models for drug discovery, protein design, and biological sequence generation. Large language models in biology.",
+          goals: "Master generative AI techniques for innovative biological research and drug discovery applications.",
           difficulty: "Advanced",
           duration: "12 weeks",
           prerequisites: "BCB202, BCB301",
-          assessments: ["Drug Design Project (45%)", "Docking Analysis (30%)", "MD Simulation Report (20%)", "Industry Presentation (5%)"],
-          textbooks: ["Computer-Aided Drug Design (Yu & MacKerell)", "Molecular Dynamics Simulation (Frenkel & Smit)"],
-          software: ["AutoDock", "Schrödinger Suite", "GROMACS", "VMD", "RDKit", "ChEMBL"]
+          assessments: ["Generative AI Project (50%)", "Model Implementation (25%)", "Research Proposal (20%)", "Ethical Analysis (5%)"],
+          textbooks: ["Generative AI for Drug Discovery", "AI in Biology (Russell & Norvig)"],
+          software: ["OpenAI API", "Hugging Face", "RDKit", "ChemBERTa", "ProtGPT", "ESM"]
+        },
+        {
+          code: "BCB304",
+          credits: 2,
+          title: "Semester Project III",
+          content: "Advanced research project incorporating machine learning and AI techniques. Students tackle complex biological problems using cutting-edge computational methods.",
+          goals: "Demonstrate mastery of advanced computational biology techniques and ability to innovate in the field.",
+          difficulty: "Expert",
+          duration: "12 weeks",
+          prerequisites: "BCB301, BCB302, BCB303 (concurrent)",
+          assessments: ["Research Proposal (20%)", "Implementation (40%)", "Final Presentation (20%)", "Peer Review (20%)"],
+          textbooks: ["Advanced research literature", "Machine Learning best practices"],
+          software: ["TensorFlow", "PyTorch", "Advanced ML libraries", "Cloud computing platforms"]
         }
       ]
     },
@@ -197,7 +236,7 @@ export default function Curriculum() {
           code: "BCB401",
           credits: 6,
           title: "Capstone Research Project",
-          content: "A significant research project with a faculty mentor from DeepBio Limited. Students work on cutting-edge problems in collaboration with industry partners.",
+          content: "A significant research project with an instructor mentor from DeepBio Limited. Students work on cutting-edge problems in collaboration with industry partners.",
           goals: "Independently apply all skills learned throughout the program to a real-world problem, demonstrating professional research capabilities.",
           difficulty: "Expert",
           duration: "12 weeks",
@@ -224,8 +263,8 @@ export default function Curriculum() {
   ];
 
   const programStats = [
-    { number: "36", label: "Total Credits", description: "comprehensive curriculum" },
-    { number: "12", label: "Core Courses", description: "hands-on learning" },
+    { number: "42", label: "Total Credits", description: "comprehensive curriculum" },
+    { number: "14", label: "Core Courses", description: "hands-on learning" },
     { number: "4", label: "Quarters", description: "intensive training" },
     { number: "100%", label: "Industry Projects", description: "real-world experience" }
   ];
@@ -256,7 +295,7 @@ export default function Curriculum() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
-              A comprehensive 36-credit curriculum designed by industry experts, updated annually 
+              A comprehensive 42-credit curriculum designed by industry experts, updated annually 
               to reflect the latest advances in bioinformatics and computational biology.
             </p>
             
@@ -270,7 +309,9 @@ export default function Curriculum() {
                 <span>Download Full Curriculum</span>
               </motion.button>
               <motion.a
-                href="/academic-calendar"
+                href="https://docs.google.com/spreadsheets/d/1pIDFq1UkoXbtE55Sm92zaKxVOx436Iv-rM6C7M3ufF0/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-800 font-bold rounded-full border-2 border-gray-300 hover:border-blue-500 transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -624,7 +665,7 @@ export default function Curriculum() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3 text-gray-400">
-                {['Program Overview', 'Curriculum', 'Admissions', 'Faculty', 'Career Services', 'Student Life'].map((link) => (
+                {['Program Overview', 'Curriculum', 'Admissions', 'Instructors', 'Career Services', 'Student Life'].map((link) => (
                   <li key={link}>
                     <a href="#" className="hover:text-white transition-colors">{link}</a>
                   </li>

@@ -116,7 +116,7 @@ export default function TermsOfService() {
                     <ul className="space-y-2 text-gray-700 text-sm">
                       <li>• Regular attendance and participation</li>
                       <li>• Completion of assignments and assessments</li>
-                      <li>• Respectful interaction with faculty and peers</li>
+                      <li>• Respectful interaction with instructors and peers</li>
                       <li>• Adherence to academic integrity policies</li>
                     </ul>
                   </div>
@@ -211,7 +211,7 @@ export default function TermsOfService() {
                     <div className="bg-white rounded-lg p-4 border-l-4 border-purple-500">
                       <h3 className="font-semibold text-gray-900 mb-2">Course Materials</h3>
                       <p className="text-sm text-gray-700">
-                        All course materials, including but not limited to lectures, presentations, assignments, and assessments, are the intellectual property of DeepBio University and its faculty. Students may not reproduce, distribute, or use these materials for commercial purposes without written permission.
+                        All course materials, including but not limited to lectures, presentations, assignments, and assessments, are the intellectual property of DeepBio University and its instructors. Students may not reproduce, distribute, or use these materials for commercial purposes without written permission.
                       </p>
                     </div>
                     
@@ -240,7 +240,7 @@ export default function TermsOfService() {
                       <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1">1</div>
                       <div>
                         <h4 className="font-semibold text-gray-900">Respectful Behavior</h4>
-                        <p className="text-sm text-gray-700">Treat all faculty, staff, and fellow students with respect and professionalism</p>
+                        <p className="text-sm text-gray-700">Treat all instructors, staff, and fellow students with respect and professionalism</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -369,7 +369,7 @@ export default function TermsOfService() {
               <ul className="space-y-3 text-gray-400">
                 <li><Link href="/curriculum" className="hover:text-white transition-colors">Curriculum</Link></li>
                 <li><Link href="/admissions" className="hover:text-white transition-colors">Admissions</Link></li>
-                <li><Link href="/faculty" className="hover:text-white transition-colors">Faculty</Link></li>
+                <li><Link href="/instructors" className="hover:text-white transition-colors">Instructors</Link></li>
                 <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               </ul>
             </div>
