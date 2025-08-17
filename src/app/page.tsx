@@ -216,19 +216,28 @@ export default function Home() {
       name: "Dr. Sarah Chen",
       role: "Bioinformatics Director, Pfizer",
       image: "👩‍💼",
-      quote: "The BCB program produces graduates who are immediately productive in our research teams. The curriculum is perfectly aligned with industry needs."
+      quote: "The BCB program produces graduates who are immediately productive in our research teams. The curriculum is perfectly aligned with industry needs.",
+      achievement: "Certificate of Completion with Distinction",
+      careerImpact: "Led 3 drug discovery projects, $2M in funding secured",
+      graduationYear: "2022"
     },
     {
       name: "Ahmed Rahman",
       role: "PhD Student, MIT",
       image: "👨‍🎓",
-      quote: "This program gave me the foundation I needed to pursue my PhD at MIT. The hands-on experience with real datasets was invaluable."
+      quote: "This program gave me the foundation I needed to pursue my PhD at MIT. The hands-on experience with real datasets was invaluable.",
+      achievement: "Certificate of Completion + AI Specialization",
+      careerImpact: "Published 4 papers in Nature Biotechnology",
+      graduationYear: "2023"
     },
     {
       name: "Dr. Maria Rodriguez",
       role: "Senior Scientist, Illumina",
       image: "👩‍🔬",
-      quote: "As a hiring manager, I specifically look for BCB program graduates. Their training in both biology and computation is exceptional."
+      quote: "As a hiring manager, I specifically look for BCB program graduates. Their training in both biology and computation is exceptional.",
+      achievement: "Certificate of Completion with High Distinction",
+      careerImpact: "Promoted to team lead, 45% salary increase",
+      graduationYear: "2021"
     }
   ];
 
@@ -255,8 +264,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-semibold text-gray-800">Applications open September 1, 2025 for 2025‑26</span>
+              <Award className="w-5 h-5 text-blue-500 mr-2" />
+              <span className="text-sm font-semibold text-gray-800">Earn Internationally Recognized Certificates</span>
               <ArrowRight className="w-4 h-4 ml-2 text-gray-600" />
             </motion.div>
 
@@ -294,8 +303,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              A comprehensive one-year professional training program in Bioinformatics and Computational Biology, 
-              combining cutting-edge data science, AI, and molecular analysis to prepare you for the next generation of life sciences careers.
+              A comprehensive one-year professional training program in Bioinformatics and Computational Biology. 
+              Graduate with internationally recognized certificates that open doors to top biotech companies, research institutions, and graduate programs worldwide.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -314,14 +323,15 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
-              <motion.button
+              <motion.a
+                href="/curriculum"
                 className="group px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-800 font-bold rounded-full border-2 border-gray-300 hover:border-blue-500 hover:bg-white transition-all duration-300 flex items-center space-x-3"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <PlayCircle className="w-5 h-5" />
-                <span>Watch Overview</span>
-              </motion.button>
+                <BookOpen className="w-5 h-5" />
+                <span>View Curriculum</span>
+              </motion.a>
             </motion.div>
 
             {/* Stats */}
@@ -713,10 +723,10 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              What Our Alumni Say
+              Certificate Holders Success Stories
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join a network of successful professionals making impact across the globe
+              See how our certified alumni are making impact across the globe with their professional credentials
             </p>
           </motion.div>
 
@@ -736,13 +746,44 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    <p className="text-xs text-blue-600">Graduated {testimonial.graduationYear}</p>
                   </div>
                 </div>
-                <p className="text-gray-700 leading-relaxed italic">"{testimonial.quote}"</p>
-                <div className="flex text-yellow-400 mt-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-current" />
-                  ))}
+                
+                <p className="text-gray-700 leading-relaxed italic mb-6">"{testimonial.quote}"</p>
+                
+                {/* Certificate Achievement Badge */}
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl mb-4">
+                  <div className="flex items-center mb-2">
+                    <Award className="w-4 h-4 text-blue-600 mr-2" />
+                    <span className="text-sm font-semibold text-gray-900">Certificate Earned:</span>
+                  </div>
+                  <p className="text-sm text-blue-700 font-medium">{testimonial.achievement}</p>
+                </div>
+
+                {/* Career Impact */}
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl mb-6">
+                  <div className="flex items-center mb-2">
+                    <TrendingUp className="w-4 h-4 text-green-600 mr-2" />
+                    <span className="text-sm font-semibold text-gray-900">Career Impact:</span>
+                  </div>
+                  <p className="text-sm text-green-700 font-medium">{testimonial.careerImpact}</p>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <motion.a
+                    href="/admissions"
+                    className="text-blue-600 hover:text-blue-700 transition-colors text-sm font-semibold flex items-center space-x-1"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <span>Apply Now</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </motion.a>
                 </div>
               </motion.div>
             ))}
@@ -750,6 +791,229 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Certificate Showcase Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Earn Your Professional Certificate
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Graduate with internationally recognized certificates that open doors to top biotech companies, 
+              research institutions, and graduate programs worldwide.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Industry Recognition</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Our certificates are recognized by leading biotech companies, pharmaceutical giants, 
+                      and top-tier universities across 50+ countries worldwide.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Verified Credentials</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Each certificate includes blockchain verification, unique ID, and QR code 
+                      for instant online verification by employers and institutions.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Career Advancement</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      95% of our certificate holders receive job offers or promotions within 6 months, 
+                      with average salary increases of 40-60%.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.a
+                    href="/admissions"
+                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Award className="w-5 h-5" />
+                    <span>Apply Now</span>
+                  </motion.a>
+                  <motion.button
+                    className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Download className="w-5 h-5" />
+                    <span>Sample Certificate</span>
+                  </motion.button>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Certificate Preview */}
+              <div className="relative bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8 shadow-2xl">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
+                  {/* Mini Certificate Design */}
+                  <div className="text-center space-y-4">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                        <Award className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="text-lg font-bold text-gray-900">DeepBio Academy</h4>
+                        <p className="text-xs text-gray-600">Professional Training Institute</p>
+                      </div>
+                    </div>
+
+                    <h3 className="text-2xl font-bold text-gray-800">CERTIFICATE OF COMPLETION</h3>
+                    <p className="text-sm text-gray-600">This is to certify that</p>
+                    
+                    <h4 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      [Your Name Here]
+                    </h4>
+                    
+                    <p className="text-sm text-gray-600">has successfully completed the</p>
+                    <h5 className="text-lg font-bold text-gray-800">Bioinformatics and Computational Biology Program</h5>
+                    
+                    <div className="flex justify-center items-center space-x-6 pt-4">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-blue-600">42</div>
+                        <div className="text-xs text-gray-600">Credits</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-purple-600">Distinction</div>
+                        <div className="text-xs text-gray-600">Grade</div>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-end pt-6 text-xs text-gray-500">
+                      <div>Dec 2024</div>
+                      <div>Certificate ID: BCB-2024-XXX</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full opacity-80"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-400 rounded-full opacity-60"></div>
+                <div className="absolute top-1/2 -right-2 w-4 h-4 bg-purple-400 rounded-full opacity-70"></div>
+              </div>
+
+              {/* Floating badges */}
+              <motion.div
+                className="absolute -top-6 right-8 bg-white rounded-full p-3 shadow-lg border border-gray-200"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="text-center">
+                  <div className="text-sm font-bold text-green-600">95%</div>
+                  <div className="text-xs text-gray-600">Job Rate</div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-6 left-8 bg-white rounded-full p-3 shadow-lg border border-gray-200"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              >
+                <div className="text-center">
+                  <div className="text-sm font-bold text-blue-600">50+</div>
+                  <div className="text-xs text-gray-600">Countries</div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Certificate Types Preview */}
+          <motion.div
+            className="grid md:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            {[
+              {
+                title: "Program Completion",
+                description: "Full 42-credit certification",
+                icon: <GraduationCap className="w-8 h-8" />,
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                title: "Specialization Track",
+                description: "Focus area expertise",
+                icon: <Target className="w-8 h-8" />,
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                title: "Professional Skills",
+                description: "Communication & leadership",
+                icon: <Users className="w-8 h-8" />,
+                color: "from-green-500 to-emerald-500"
+              }
+            ].map((cert, index) => (
+              <motion.div
+                key={cert.title}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                whileHover={{ y: -5 }}
+              >
+                <div className={`text-transparent bg-gradient-to-br ${cert.color} bg-clip-text mb-4`}>
+                  {cert.icon}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{cert.title}</h3>
+                <p className="text-gray-600 text-sm">{cert.description}</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <span className="text-xs text-blue-600 font-semibold">Internationally Recognized</span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-white">
@@ -761,10 +1025,10 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8">
-              Ready to Start Your Journey?
+              Ready to Earn Your Professional Certificate?
             </h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-              Join the next cohort of bioinformatics and computational biology leaders. Applications are now open for our 2025-26 program.
+              Join the next cohort of bioinformatics and computational biology leaders. Graduate with internationally recognized certificates that accelerate your career.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
@@ -895,9 +1159,16 @@ export default function Home() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3 text-gray-400">
-                {['Program Overview', 'Curriculum', 'Admissions', 'Instructors', 'Career Services', 'Student Life'].map((link) => (
-                  <li key={link}>
-                    <a href="#" className="hover:text-white transition-colors">{link}</a>
+                {[
+                  { name: 'Program Overview', href: '/' }, 
+                  { name: 'Curriculum', href: '/curriculum' }, 
+                  { name: 'Admissions', href: '/admissions' }, 
+                  { name: 'Instructors', href: '/instructors' }, 
+                  { name: 'Career Services', href: '#' },
+                  { name: 'Student Life', href: '#' }
+                ].map((link) => (
+                  <li key={link.name}>
+                    <a href={link.href} className="hover:text-white transition-colors">{link.name}</a>
                   </li>
                 ))}
               </ul>

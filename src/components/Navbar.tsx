@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { GraduationCap, Menu, X } from 'lucide-react';
@@ -12,7 +12,12 @@ interface NavbarProps {
 
 export default function Navbar({ isScrolled = false }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navigationItems = [
     { name: 'Curriculum', href: '/curriculum' },
@@ -21,7 +26,7 @@ export default function Navbar({ isScrolled = false }: NavbarProps) {
     { name: 'Academic Policy', href: '/academic-integrity' }
   ];
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = (href: string) => mounted && pathname === href;
 
   return (
     <motion.header 
