@@ -241,6 +241,23 @@ export default function Home() {
     }
   ];
 
+  const mentorTestimonials = [
+    {
+      name: "Sayed Mashequl Bari",
+      role: "Assistant Professor, Faculty of Fisheries and Marine Science",
+      institution: "Sher-e-Bangla Agricultural University, Dhaka, Bangladesh",
+      image: "👨‍🔬",
+      quote: "Bioinformatics and Computational Biology are at the forefront of modern science, shaping breakthroughs in genomics, drug discovery, and personalized medicine. Programs like the Professional Training in Bioinformatics & Computational Biology by DeepBio, under the guidance of Md. Jubayer Hossain, provide students in Bangladesh with an invaluable opportunity to gain hands-on expertise in these rapidly evolving fields."
+    },
+    {
+      name: "Syeda Tasneem",
+      role: "Associate Professor, Department of Microbiology",
+      institution: "Jagannath University",
+      image: "👩‍🔬",
+      quote: "I am pleased we are finally having an opportunity to train the graduate students in advanced AI techniques that would help us reach international levels."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -712,7 +729,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials - Commented out for first cohort 
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -752,7 +769,6 @@ export default function Home() {
                 
                 <p className="text-gray-700 leading-relaxed italic mb-6">"{testimonial.quote}"</p>
                 
-                {/* Certificate Achievement Badge */}
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl mb-4">
                   <div className="flex items-center mb-2">
                     <Award className="w-4 h-4 text-blue-600 mr-2" />
@@ -761,7 +777,6 @@ export default function Home() {
                   <p className="text-sm text-blue-700 font-medium">{testimonial.achievement}</p>
                 </div>
 
-                {/* Career Impact */}
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl mb-6">
                   <div className="flex items-center mb-2">
                     <TrendingUp className="w-4 h-4 text-green-600 mr-2" />
@@ -788,6 +803,101 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+      */}
+
+      {/* Teacher/Mentor Endorsements Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Endorsed by Leading Educators
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Hear from respected teachers, professors, and researchers across Bangladesh about the critical importance 
+              of bioinformatics education and why they encourage students to pursue this transformative program.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {mentorTestimonials.map((mentor, index) => (
+              <motion.div
+                key={mentor.name}
+                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                {/* Header with mentor info */}
+                <div className="flex items-start mb-6">
+                  <div className="text-4xl mr-4 flex-shrink-0">{mentor.image}</div>
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-gray-900 mb-1 text-lg">{mentor.name}</h4>
+                    <p className="text-sm text-blue-600 font-semibold mb-1">{mentor.role}</p>
+                    <p className="text-xs text-gray-600 leading-tight">{mentor.institution}</p>
+                  </div>
+                </div>
+                
+                {/* Quote */}
+                <blockquote className="text-gray-700 leading-relaxed italic mb-6 text-sm">
+                  "{mentor.quote}"
+                </blockquote>
+
+                {/* Decorative gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Call-to-action at bottom of mentor section */}
+          <motion.div
+            className="mt-16 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gradient-to-r from-gray-50 to-blue-50/50 rounded-3xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Join the Movement Transforming Science in Bangladesh
+              </h3>
+              <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                Take your respected teachers' advice and be part of the first generation of computational biologists 
+                who will drive scientific innovation and healthcare advancement in Bangladesh and beyond.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.a
+                  href="/admissions"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <GraduationCap className="w-5 h-5" />
+                  <span>Start Your Application</span>
+                </motion.a>
+                <motion.a
+                  href="https://docs.google.com/forms/d/e/your-mentor-feedback-form"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Share Your Endorsement</span>
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
