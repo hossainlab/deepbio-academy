@@ -3,10 +3,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   BookOpen, Users, Award, ArrowRight, Mail, Phone, MapPin, GraduationCap, 
-  Menu, X, ChevronDown, Star, Globe, Calendar, Clock, CheckCircle,
-  PlayCircle, Download, ExternalLink, Zap, Target, TrendingUp
+  Globe, Calendar, Clock, CheckCircle, Download, ExternalLink, Zap, Target, TrendingUp
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 
@@ -211,50 +211,58 @@ export default function Home() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Dr. Sarah Chen",
-      role: "Bioinformatics Director, Pfizer",
-      image: "👩‍💼",
-      quote: "The BCB program produces graduates who are immediately productive in our research teams. The curriculum is perfectly aligned with industry needs.",
-      achievement: "Certificate of Completion with Distinction",
-      careerImpact: "Led 3 drug discovery projects, $2M in funding secured",
-      graduationYear: "2022"
-    },
-    {
-      name: "Ahmed Rahman",
-      role: "PhD Student, MIT",
-      image: "👨‍🎓",
-      quote: "This program gave me the foundation I needed to pursue my PhD at MIT. The hands-on experience with real datasets was invaluable.",
-      achievement: "Certificate of Completion + AI Specialization",
-      careerImpact: "Published 4 papers in Nature Biotechnology",
-      graduationYear: "2023"
-    },
-    {
-      name: "Dr. Maria Rodriguez",
-      role: "Senior Scientist, Illumina",
-      image: "👩‍🔬",
-      quote: "As a hiring manager, I specifically look for BCB program graduates. Their training in both biology and computation is exceptional.",
-      achievement: "Certificate of Completion with High Distinction",
-      careerImpact: "Promoted to team lead, 45% salary increase",
-      graduationYear: "2021"
-    }
-  ];
+  // Testimonials array - currently commented out since it's the first cohort
+  // const testimonials = [
+  //   {
+  //     name: "Dr. Sarah Chen",
+  //     role: "Bioinformatics Director, Pfizer",
+  //     image: "👩‍💼",
+  //     quote: "The BCB program produces graduates who are immediately productive in our research teams. The curriculum is perfectly aligned with industry needs.",
+  //     achievement: "Certificate of Completion with Distinction",
+  //     careerImpact: "Led 3 drug discovery projects, $2M in funding secured",
+  //     graduationYear: "2022"
+  //   },
+  //   {
+  //     name: "Ahmed Rahman",
+  //     role: "PhD Student, MIT",
+  //     image: "👨‍🎓",
+  //     quote: "This program gave me the foundation I needed to pursue my PhD at MIT. The hands-on experience with real datasets was invaluable.",
+  //     achievement: "Certificate of Completion + AI Specialization",
+  //     careerImpact: "Published 4 papers in Nature Biotechnology",
+  //     graduationYear: "2023"
+  //   },
+  //   {
+  //     name: "Dr. Maria Rodriguez",
+  //     role: "Senior Scientist, Illumina",
+  //     image: "👩‍🔬",
+  //     quote: "As a hiring manager, I specifically look for BCB program graduates. Their training in both biology and computation is exceptional.",
+  //     achievement: "Certificate of Completion with High Distinction",
+  //     careerImpact: "Promoted to team lead, 45% salary increase",
+  //     graduationYear: "2021"
+  //   }
+  // ];
 
   const mentorTestimonials = [
     {
       name: "Sayed Mashequl Bari",
       role: "Assistant Professor, Faculty of Fisheries and Marine Science",
       institution: "Sher-e-Bangla Agricultural University, Dhaka, Bangladesh",
-      image: "👨‍🔬",
+      image: "/images/mentors/bari.jpeg",
       quote: "Bioinformatics and Computational Biology are at the forefront of modern science, shaping breakthroughs in genomics, drug discovery, and personalized medicine. Programs like the Professional Training in Bioinformatics & Computational Biology by DeepBio, under the guidance of Md. Jubayer Hossain, provide students in Bangladesh with an invaluable opportunity to gain hands-on expertise in these rapidly evolving fields."
     },
     {
-      name: "Syeda Tasneem",
+      name: "Syeda Tasneem Towhid, PhD",
       role: "Associate Professor, Department of Microbiology",
       institution: "Jagannath University",
-      image: "👩‍🔬",
+      image: "/images/mentors/tasneem.jpg",
       quote: "I am pleased we are finally having an opportunity to train the graduate students in advanced AI techniques that would help us reach international levels."
+    },
+    {
+      name: "Sabia Sultana",
+      role: "Assistant Professor, Department of Microbiology",
+      institution: "Jagannath University",
+      image: "/images/mentors/sabia.jpg",
+      quote: "I strongly believe this One-Year Professional Training in Bioinformatics & Computational Biology is more than just an academic program—it is an opportunity to step into the future of science. This program will bridge the gap between theory and practice, giving you the ability to analyze real-world biological data and prepare for global opportunities. The skills you gain here will open doors to higher studies, research positions, and meaningful careers in healthcare, biotechnology, and agriculture. You will become part of a growing community of young researchers making lasting contributions to Bangladesh and the global scientific community."
     }
   ];
 
@@ -282,7 +290,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <Award className="w-5 h-5 text-blue-500 mr-2" />
-              <span className="text-sm font-semibold text-gray-800">Earn Internationally Recognized Certificates</span>
+              <span className="text-sm font-semibold text-gray-800">Earn International Standard Professional Certificates</span>
               <ArrowRight className="w-4 h-4 ml-2 text-gray-600" />
             </motion.div>
 
@@ -341,13 +349,16 @@ export default function Home() {
               </motion.button>
               
               <motion.a
-                href="/curriculum"
+                href="https://docs.google.com/spreadsheets/d/1pIDFq1UkoXbtE55Sm92zaKxVOx436Iv-rM6C7M3ufF0/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-800 font-bold rounded-full border-2 border-gray-300 hover:border-blue-500 hover:bg-white transition-all duration-300 flex items-center space-x-3"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <BookOpen className="w-5 h-5" />
                 <span>View Curriculum</span>
+                <ExternalLink className="w-4 h-4" />
               </motion.a>
             </motion.div>
 
@@ -372,47 +383,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Why Choose Our Program?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Experience international standard education designed by industry experts and researchers
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                <div className="text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -524,6 +494,47 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Why Choose Our Program?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Experience international standard education designed by industry experts and researchers
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                <div className="text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -821,80 +832,147 @@ export default function Home() {
               Endorsed by Leading Educators
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Hear from respected teachers, professors, and researchers across Bangladesh about the critical importance 
-              of bioinformatics education and why they encourage students to pursue this transformative program.
+              Respected teachers, professors, and researchers across Bangladesh share their perspectives on 
+              the importance of bioinformatics education and encourage students to pursue this transformative program.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {mentorTestimonials.map((mentor, index) => (
               <motion.div
                 key={mentor.name}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                className="group bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
               >
-                {/* Header with mentor info */}
-                <div className="flex items-start mb-6">
-                  <div className="text-4xl mr-4 flex-shrink-0">{mentor.image}</div>
-                  <div className="min-w-0">
-                    <h4 className="font-bold text-gray-900 mb-1 text-lg">{mentor.name}</h4>
-                    <p className="text-sm text-blue-600 font-semibold mb-1">{mentor.role}</p>
-                    <p className="text-xs text-gray-600 leading-tight">{mentor.institution}</p>
+                {/* Decorative background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Quote marks decoration */}
+                <div className="absolute top-4 right-6 text-6xl text-blue-100 font-serif leading-none">"</div>
+                
+                <div className="relative z-10">
+                  {/* Profile Section */}
+                  <div className="text-center mb-6">
+                    <div className="relative w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
+                      <Image
+                        src={mentor.image}
+                        alt={mentor.name}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLDivElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100" style={{ display: 'none' }}>
+                        <div className="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center">
+                          <svg className="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <h4 className="text-xl font-bold text-gray-900 mb-2 select-text group-hover:text-blue-700 transition-colors">
+                      {mentor.name}
+                    </h4>
+                    
+                    <p className="text-sm font-medium text-blue-600 mb-1 select-text">
+                      {mentor.role}
+                    </p>
+                    
+                    <p className="text-sm text-gray-600 select-text">
+                      {mentor.institution}
+                    </p>
+                    
+                    {/* Verification badge */}
+                    <div className="inline-flex items-center mt-3 px-3 py-1 bg-green-50 rounded-full">
+                      <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                      <span className="text-xs font-semibold text-green-700">Verified Educator</span>
+                    </div>
+                  </div>
+
+                  {/* Quote Section */}
+                  <blockquote className="text-gray-700 text-sm leading-relaxed select-text mb-6 min-h-[120px] flex items-start">
+                    <span className="italic">"{mentor.quote}"</span>
+                  </blockquote>
+
+                  {/* Bottom decoration */}
+                  <div className="flex items-center justify-center">
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-2 h-2 rounded-full bg-blue-200 group-hover:bg-blue-400 transition-colors duration-300"></div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                
-                {/* Quote */}
-                <blockquote className="text-gray-700 leading-relaxed italic mb-6 text-sm">
-                  "{mentor.quote}"
-                </blockquote>
-
-                {/* Decorative gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
             ))}
           </div>
 
           {/* Call-to-action at bottom of mentor section */}
           <motion.div
-            className="mt-16 text-center"
+            className="text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50/50 rounded-3xl p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Join the Movement Transforming Science in Bangladesh
-              </h3>
-              <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                Take your respected teachers' advice and be part of the first generation of computational biologists 
-                who will drive scientific innovation and healthcare advancement in Bangladesh and beyond.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.a
-                  href="/admissions"
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <GraduationCap className="w-5 h-5" />
-                  <span>Start Your Application</span>
-                </motion.a>
-                <motion.a
-                  href="https://docs.google.com/forms/d/e/your-mentor-feedback-form"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Mail className="w-5 h-5" />
-                  <span>Share Your Endorsement</span>
-                </motion.a>
+            <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-3xl p-12 text-white relative overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+              <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                <svg className="w-full h-full" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <polygon points="0,100 100,0 100,100" />
+                </svg>
+              </div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-center mb-8">
+                  <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <GraduationCap className="w-10 h-10 text-white" />
+                  </div>
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                  Join the Movement Transforming Science in Bangladesh
+                </h3>
+                <p className="text-xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed">
+                  Take your respected teachers' advice and be part of the first generation of computational biologists 
+                  who will drive scientific innovation and healthcare advancement in Bangladesh and beyond.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <motion.a
+                    href="/admissions"
+                    className="px-10 py-4 bg-white text-blue-700 font-bold text-lg rounded-full shadow-xl hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <GraduationCap className="w-6 h-6" />
+                    <span>Start Your Application</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.a>
+                  
+                  <motion.a
+                    href="https://docs.google.com/forms/d/e/your-mentor-feedback-form"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-4 bg-transparent border-2 border-white/50 text-white font-bold text-lg rounded-full hover:border-white hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-3"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Mail className="w-6 h-6" />
+                    <span>Share Your Endorsement</span>
+                    <ExternalLink className="w-5 h-5" />
+                  </motion.a>
+                </div>
               </div>
             </div>
           </motion.div>
