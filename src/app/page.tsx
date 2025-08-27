@@ -890,12 +890,6 @@ export default function Home() {
                     <p className="text-sm text-gray-600 select-text">
                       {mentor.institution}
                     </p>
-                    
-                    {/* Verification badge */}
-                    <div className="inline-flex items-center mt-3 px-3 py-1 bg-green-50 rounded-full">
-                      <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                      <span className="text-xs font-semibold text-green-700">Verified Educator</span>
-                    </div>
                   </div>
 
                   {/* Quote Section */}
