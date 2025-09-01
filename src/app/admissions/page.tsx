@@ -23,7 +23,7 @@ export default function Admissions() {
         "Upload academic transcripts (Bachelor's degree required)",
         "Submit two academic/professional reference letters",
         "Write a statement of purpose (500-1000 words)",
-        "Pay application fee (1,000 BDT)"
+        "Pay application fee (200 BDT)"
       ],
       duration: "2-3 weeks",
       icon: <FileText className="w-8 h-8" />,
@@ -82,7 +82,7 @@ export default function Admissions() {
       title: "Official Admission & Fees",
       description: "Complete enrollment and fee payment to secure your seat",
       details: [
-        "Pay remaining program fees (50,000 BDT)",
+        "Pay remaining program fees (110,000 BDT)",
         "Receive official enrollment confirmation",
         "Access to student portal and learning management system",
         "Welcome package with program materials",
@@ -424,7 +424,7 @@ export default function Admissions() {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-purple-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Remaining Fees</span>
-                    <span className="font-bold text-purple-600">৳50,000 BDT</span>
+                    <span className="font-bold text-purple-600">৳110,000 BDT</span>
                   </div>
                   <div className="border-t-2 border-gray-200 pt-4">
                     <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl">
@@ -636,7 +636,7 @@ export default function Admissions() {
 
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; 2024 DeepBio University. All rights reserved.
+              &copy; 2025 DeepBio Academy. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 sm:mt-0 text-sm text-gray-400">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
