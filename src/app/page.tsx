@@ -182,7 +182,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { number: "100%", label: "Employment Rate", description: "within 6 months" },
+    { number: "100%", label: "Job Ready", description: "within 6 months" },
     { number: "42", label: "Credits", description: "internationally recognized" },
     { number: "3+", label: "Industry Partners", description: "for internships" },
     { number: "24/7", label: "Support", description: "technical assistance" }
@@ -191,8 +191,8 @@ export default function Home() {
   const features = [
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Global Recognition",
-      description: "Internationally accredited program recognized by leading universities worldwide"
+      title: "International Standard",
+      description: "International standard program designed by leading experts."
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -1143,8 +1143,8 @@ export default function Home() {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
               >
                 <div className="text-center">
-                  <div className="text-sm font-bold text-blue-600">50+</div>
-                  <div className="text-xs text-gray-600">Countries</div>
+                  <div className="text-sm font-bold text-blue-600">10+</div>
+                  <div className="text-xs text-gray-600">Target Countries</div>
                 </div>
               </motion.div>
             </motion.div>
