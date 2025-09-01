@@ -128,7 +128,7 @@ export default function Admissions() {
     {
       icon: <DollarSign className="w-8 h-8 text-green-600" />,
       title: "Program Fees",
-      value: "৳60,000 BDT",
+      value: "৳120,000 BDT",
       description: "Total professional training fees",
       details: "Includes all course materials, lab access, and certification"
     },
