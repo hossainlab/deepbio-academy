@@ -416,7 +416,7 @@ export default function Admissions() {
                 <div className="space-y-6">
                   <div className="flex items-center justify-between p-4 bg-blue-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Application Fee</span>
-                    <span className="font-bold text-blue-600">৳1,000 BDT</span>
+                    <span className="font-bold text-blue-600">৳200 BDT</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Acceptance Fee</span>
@@ -429,7 +429,7 @@ export default function Admissions() {
                   <div className="border-t-2 border-gray-200 pt-4">
                     <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl">
                       <span className="text-xl font-bold">Total Program Fees</span>
-                      <span className="text-2xl font-bold">৳60,000 BDT</span>
+                      <span className="text-2xl font-bold">৳120,000 BDT</span>
                     </div>
                   </div>
                 </div>
