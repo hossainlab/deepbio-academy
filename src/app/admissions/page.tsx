@@ -23,7 +23,7 @@ export default function Admissions() {
         "Upload academic transcripts (Bachelor's degree required)",
         "Submit two academic/professional reference letters",
         "Write a statement of purpose (500-1000 words)",
-        "Pay application fee (200 BDT)"
+        "No application fee"
       ],
       duration: "2-3 weeks",
       icon: <FileText className="w-8 h-8" />,
@@ -39,7 +39,7 @@ export default function Admissions() {
         "Motivation and career goals discussion",
         "Problem-solving and analytical thinking evaluation",
         "Available via video call or in-person",
-        "Interview duration: 45-60 minutes"
+        "Interview duration: 20-30 minutes"
       ],
       duration: "1-2 weeks after application review",
       icon: <Phone className="w-8 h-8" />,
@@ -82,7 +82,7 @@ export default function Admissions() {
       title: "Official Admission & Fees",
       description: "Complete enrollment and fee payment to secure your seat",
       details: [
-        "Pay remaining program fees (110,000 BDT)",
+        "Pay remaining program fees (50,000 BDT)",
         "Receive official enrollment confirmation",
         "Access to student portal and learning management system",
         "Welcome package with program materials",
@@ -110,8 +110,7 @@ export default function Admissions() {
         "Two academic or professional reference letters",
         "Statement of Purpose (500-1000 words)",
         "Updated CV/Resume",
-        "Copy of passport (for international applicants)",
-        "Medical fitness certificate"
+        "Copy of passport (for international applicants)"
       ]
     },
     {
@@ -128,7 +127,7 @@ export default function Admissions() {
     {
       icon: <DollarSign className="w-8 h-8 text-green-600" />,
       title: "Program Fees",
-      value: "৳120,000 BDT",
+      value: "৳60,000 BDT",
       description: "Total professional training fees",
       details: "Includes all course materials, lab access, and certification"
     },
@@ -206,22 +205,28 @@ export default function Admissions() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <motion.button
+              <motion.a
+                href="https://forms.gle/kEdbyBf1bHsDmiU57"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span>Apply Now</span>
                 <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
+                href="https://docs.google.com/spreadsheets/d/1pIDFq1UkoXbtE55Sm92zaKxVOx436Iv-rM6C7M3ufF0/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-800 font-bold rounded-full border-2 border-gray-300 hover:border-blue-500 transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Download className="w-5 h-5" />
                 <span>Download Brochure</span>
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -416,7 +421,7 @@ export default function Admissions() {
                 <div className="space-y-6">
                   <div className="flex items-center justify-between p-4 bg-blue-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Application Fee</span>
-                    <span className="font-bold text-blue-600">৳200 BDT</span>
+                    <span className="font-bold text-blue-600">৳00 BDT</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Acceptance Fee</span>
@@ -424,12 +429,12 @@ export default function Admissions() {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-purple-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Remaining Fees</span>
-                    <span className="font-bold text-purple-600">৳110,000 BDT</span>
+                    <span className="font-bold text-purple-600">৳50,000 BDT</span>
                   </div>
                   <div className="border-t-2 border-gray-200 pt-4">
                     <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl">
                       <span className="text-xl font-bold">Total Program Fees</span>
-                      <span className="text-2xl font-bold">৳120,000 BDT</span>
+                      <span className="text-2xl font-bold">৳60,000 BDT</span>
                     </div>
                   </div>
                 </div>
@@ -443,7 +448,7 @@ export default function Admissions() {
                     "Access to cutting-edge computational resources",
                     "Industry mentorship and networking",
                     "Career placement assistance",
-                    "Certificate from DeepBio University",
+                    "Certificate from DeepBio Limited",
                     "Lifetime alumni network access",
                     "Research project supervision",
                     "Professional development workshops"
@@ -475,14 +480,17 @@ export default function Admissions() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <motion.button
+              <motion.a
+                href="https://forms.gle/1a31RdFqU3TbBCiR6"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-white text-gray-900 font-bold text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <User className="w-6 h-6" />
                 <span>Start Application</span>
-              </motion.button>
+              </motion.a>
               <motion.button
                 className="px-10 py-5 border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
@@ -494,10 +502,6 @@ export default function Admissions() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm">
-              <div className="flex items-center space-x-2">
-                <AlertCircle className="w-5 h-5 text-yellow-400" />
-                <span>Early Bird Discount: 20% off until September 30, 2025</span>
-              </div>
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-blue-400" />
                 <span>Limited to 40 seats only</span>

@@ -88,13 +88,16 @@ export default function Navbar({ isScrolled = false }: NavbarProps) {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <motion.button
+            <motion.a
+              href="https://forms.gle/kEdbyBf1bHsDmiU57"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2.5 text-blue-600 font-semibold border-2 border-blue-600 rounded-full hover:bg-blue-50 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Apply Now
-            </motion.button>
+            </motion.a>
           </div>
 
           <button
@@ -129,9 +132,14 @@ export default function Navbar({ isScrolled = false }: NavbarProps) {
                   {item.name}
                 </a>
               ))}
-              <button className="w-full mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors">
+              <a
+                href="https://forms.gle/kEdbyBf1bHsDmiU57"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors block text-center"
+              >
                 Apply Now
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

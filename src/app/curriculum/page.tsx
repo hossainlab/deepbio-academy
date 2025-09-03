@@ -547,7 +547,9 @@ export default function Curriculum() {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.a
-                href="/admissions"
+                href="https://forms.gle/kEdbyBf1bHsDmiU57"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-white text-gray-900 font-bold text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

@@ -339,14 +339,17 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <motion.button
+              <motion.a
+                href="https://forms.gle/PAs7XKJxJnAhZ5o58"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-3"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span>Start Your Journey</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.a>
               
               <motion.a
                 href="https://docs.google.com/spreadsheets/d/1pIDFq1UkoXbtE55Sm92zaKxVOx436Iv-rM6C7M3ufF0/edit?usp=sharing"
@@ -803,7 +806,9 @@ export default function Home() {
                     ))}
                   </div>
                   <motion.a
-                    href="/admissions"
+                    href="https://forms.gle/kEdbyBf1bHsDmiU57"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 transition-colors text-sm font-semibold flex items-center space-x-1"
                     whileHover={{ scale: 1.05 }}
                   >
@@ -944,7 +949,9 @@ export default function Home() {
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <motion.a
-                    href="/admissions"
+                    href="https://forms.gle/PAs7XKJxJnAhZ5o58"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-10 py-4 bg-white text-blue-700 font-bold text-lg rounded-full shadow-xl hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
@@ -1049,7 +1056,9 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   <motion.a
-                    href="/admissions"
+                    href="https://forms.gle/kEdbyBf1bHsDmiU57"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -1214,13 +1223,16 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <motion.button
+              <motion.a
+                href="https://forms.gle/kEdbyBf1bHsDmiU57"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Apply Now
-              </motion.button>
+              </motion.a>
               <motion.button
                 className="px-10 py-5 border-2 border-gray-300 text-gray-800 font-bold text-lg rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}

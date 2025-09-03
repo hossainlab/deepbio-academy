@@ -6,106 +6,95 @@ import Link from 'next/link';
 import { 
   GraduationCap, Menu, X, Mail, ExternalLink, BookOpen, Award,
   Users, Globe, Star, ChevronDown, ChevronRight, Building,
-  Calendar, MapPin, Phone, Download, Search, Filter
+  Calendar, MapPin, Phone, Download, Search
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 
 export default function Instructors() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
   const [expandedInstructor, setExpandedInstructor] = useState<string | null>(null);
-
-  const instructorCategories = ['All', 'Core Instructors', 'Adjunct Instructors', 'Industry Partners', 'Visiting Scholars'];
 
   const instructorMembers = [
     {
-      id: 'incoming-instructor-1',
-      name: 'Incoming Instructor',
-      title: 'Lead Instructor - Computational Biology',
+      id: 'jubayer',
+      name: 'Md. Jubayer Hossain',
+      title: 'Lead Organizer & Instructor',
       category: 'Core Instructors',
       department: 'Computational Biology & Bioinformatics',
       institution: 'DeepBio Academy',
-      image: '/api/placeholder/400/400',
-      email: 'incoming@deepbioacademy.com',
+      image: '/images/instructors/jubayer.jpg',
+      email: 'jubayer@deepbioltd.com',
       phone: 'TBA',
-      office: 'TBA',
+      office: 'DeepBio Limited, Dhaka, Bangladesh',
       education: [
-        'Ph.D. in Computational Biology (TBA)',
-        'M.S. in Bioinformatics (TBA)',
-        'B.S. in Related Field (TBA)'
+        'M.S. in Microbiology',
+        'B.S. in Microbiology'
       ],
       experience: [
-        'Industry Experience - TBA',
-        'Research Experience - TBA',
-        'Teaching Experience - TBA'
+        'Founder & Chief Executive officer, DeepBio Limited',
+        'Founder & Chief Executive Director, CHIRAL Bangladesh',
+        'Faculty, Center for Bioinformatics Learning Advancement and Systematics Training(cBLAST), University of Dhaka',
+        'Instructor, Daffodil International University (Micro-credential Academy, AI for Public Health)',
+        'Program Lead, GSA Bioinformatics Internship'
       ],
       researchInterests: [
-        'Machine Learning in Genomics',
-        'Computational Drug Discovery',
-        'Systems Biology',
-        'Bioinformatics Algorithms'
+        'Transcriptomics',
+        'Single Cell Analysis',
+        'bulk RNA-Seq Meta Aanalysis',
+        'Single Cell Meta Analysis', 
+        'Machine Learning for Computational Biology',
+        'GenAI for Biology'
       ],
-      selectedPublications: [
-        'Publication details - Coming Soon',
-        'Research publications - TBA',
-        'Academic contributions - TBA'
+      courses: [
+        'BCB201: Genomics, Proteomics and Transcriptomics',
+        'BCB202: Metagenomics and Microbiome Data Analysis',
+        'BCB103: Mathematics for Bioinformatics and Computational Biology',
+        'BCB301: Machine Learning in Computational Biology',
+        'BCB302: Computational Systems Biology: Deep Learning in the Life Sciences',
+        'BCB303: Generative AI for Life Sciences'
       ],
-      courses: ['BCB101: Introduction to Bioinformatics', 'BCB201: Genomics & Transcriptomics', 'BCB401: Capstone Research'],
-      linkedin: '#',
-      orcid: '#',
-      googleScholar: '#'
+      linkedin: 'https://www.linkedin.com/in/hossainmj/'
     },
     {
-      id: 'incoming-instructor-2',
-      name: 'Incoming Instructor',
-      title: 'Structural Biology Specialist',
-      category: 'Core Instructors',
-      department: 'Structural & Computational Biology',
-      institution: 'DeepBio Academy',
-      image: '/api/placeholder/400/400',
-      email: 'incoming@deepbioacademy.com',
+      id: 'fuad',
+      name: 'Muntasim Fuad',
+      title: 'Bioinformatics Scientist I',
+      category: 'Teaching Assistant',
+      department: 'Bioinformatics',
+      institution: 'DeepBio Limited',
+      image: '/images/instructors/fuad.jpeg',
+      email: 'fuad@deepbioltd.com',
       phone: 'TBA',
-      office: 'TBA',
+      office: 'DeepBio Limited, Dhaka, Bangladesh',
       education: [
-        'Ph.D. in Structural Biology (TBA)',
-        'M.S. in Biochemistry (TBA)',
-        'B.S. in Chemistry (TBA)'
+        'B.S. in Microbiology'
       ],
       experience: [
-        'Research Experience - TBA',
-        'Industry Experience - TBA',
-        'Teaching Experience - TBA'
+        'Bioinformatics Scientist I, DeepBio Limited'
       ],
       researchInterests: [
-        'Protein Structure Prediction',
-        'Cryo-EM Structure Determination',
+        'Transcriptomics',
+        'Structural Bioinformatics',
         'Drug-Target Interactions',
-        'Structural Bioinformatics'
+        'Bioinformatics'
       ],
-      selectedPublications: [
-        'Publication details - Coming Soon',
-        'Research publications - TBA',
-        'Academic contributions - TBA'
-      ],
-      courses: ['BCB203: Structural Bioinformatics', 'BCB302: Advanced Methods'],
+      courses: ['BCB101: Introduction to Bioinformatics and Computational Biology', 'BCB201: Genomics, Proteomics and Transcriptomics'],
       linkedin: '#',
       orcid: '#',
       googleScholar: '#'
     },
     {
-      id: 'incoming-instructor-3',
-      name: 'Incoming Instructor',
-      title: 'Machine Learning Specialist',
-      category: 'Adjunct Instructors',
-      department: 'Computational Genetics & AI',
-      institution: 'DeepBio Academy',
-      image: '/api/placeholder/400/400',
+      id: 'muhib',
+      name: 'Muhibullah Shahjahan',
+      title: 'Bioinformatics Scientist I',
+      category: 'Teaching Assistant',
+      department: 'Bioinformatics',
+      institution: 'DeepBio Limited',
+      image: '/images/instructors/muhib.jpg',
       email: 'incoming@deepbioacademy.com',
       phone: 'TBA',
       office: 'TBA',
       education: [
-        'Ph.D. in Computational Biology (TBA)',
-        'M.S. in Computer Science (TBA)',
-        'B.S. in Mathematics (TBA)'
+        'B.S. in Microbiology'
       ],
       experience: [
         'Industry Experience - TBA',
@@ -129,13 +118,13 @@ export default function Instructors() {
       googleScholar: '#'
     },
     {
-      id: 'incoming-instructor-4',
-      name: 'Incoming Instructor',
+      id: 'rifat',
+      name: 'Rifat',
       title: 'Systems Biology Expert',
       category: 'Core Instructors',
       department: 'Systems Biology & Network Analysis',
       institution: 'DeepBio Academy',
-      image: '/api/placeholder/400/400',
+      image: '/images/instructors/rifat.png',
       email: 'incoming@deepbioacademy.com',
       phone: 'TBA',
       office: 'TBA',
@@ -164,12 +153,201 @@ export default function Instructors() {
       linkedin: '#',
       orcid: '#',
       googleScholar: '#'
+    },
+    {
+      id: 'adib',
+      name: 'Adib',
+      title: 'Bioinformatics Specialist',
+      category: 'Adjunct Instructors',
+      department: 'Bioinformatics & Data Science',
+      institution: 'DeepBio Academy',
+      image: '/images/instructors/adib.jpg',
+      email: 'adib@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
+      education: [
+        'Ph.D. in Bioinformatics (TBA)',
+        'M.S. in Computer Science (TBA)',
+        'B.S. in Related Field (TBA)'
+      ],
+      experience: [
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
+      ],
+      researchInterests: [
+        'Computational Genomics',
+        'Data Mining',
+        'Algorithm Development',
+        'Statistical Analysis'
+      ],
+      courses: ['BCB102: Programming for Life Sciences', 'BCB202: Statistical Computing'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
+    },
+    {
+      id: 'musab',
+      name: 'Musab',
+      title: 'Computational Genetics Expert',
+      category: 'Core Instructors',
+      department: 'Computational Genetics',
+      institution: 'DeepBio Academy',
+      image: '/images/instructors/musab.jpg',
+      email: 'musab@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
+      education: [
+        'Ph.D. in Genetics (TBA)',
+        'M.S. in Computational Biology (TBA)',
+        'B.S. in Related Field (TBA)'
+      ],
+      experience: [
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
+      ],
+      researchInterests: [
+        'Population Genetics',
+        'GWAS Studies',
+        'Genetic Epidemiology',
+        'Variant Analysis'
+      ],
+      courses: ['BCB203: Genetics & Genomics', 'BCB303: Population Genetics'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
+    },
+    {
+      id: 'pritom',
+      name: 'Pritom Kundu',
+      title: 'Systems Biology Researcher',
+      category: 'Industry Partners',
+      department: 'Systems Biology',
+      institution: 'DeepBio Academy',
+      image: '/images/instructors/pritom.jpg',
+      email: 'pritom@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
+      education: [
+        'Ph.D. in Systems Biology (TBA)',
+        'M.S. in Bioinformatics (TBA)',
+        'B.S. in Related Field (TBA)'
+      ],
+      experience: [
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
+      ],
+      researchInterests: [
+        'Network Biology',
+        'Mathematical Modeling',
+        'Pathway Analysis',
+        'Computational Systems'
+      ],
+      courses: ['BCB204: Systems Biology', 'BCB304: Network Analysis'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
+    },
+    {
+      id: 'sajjad',
+      name: 'Sajjad',
+      title: 'Machine Learning Researcher',
+      category: 'Visiting Scholars',
+      department: 'AI & Machine Learning',
+      institution: 'DeepBio Academy',
+      image: '/images/instructors/sajjad.jpg',
+      email: 'sajjad@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
+      education: [
+        'Ph.D. in Machine Learning (TBA)',
+        'M.S. in Computer Science (TBA)',
+        'B.S. in Related Field (TBA)'
+      ],
+      experience: [
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
+      ],
+      researchInterests: [
+        'Deep Learning',
+        'Neural Networks',
+        'Pattern Recognition',
+        'AI Applications'
+      ],
+      courses: ['BCB301: Machine Learning', 'BCB401: Advanced AI'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
+    },
+    {
+      id: 'shekhar',
+      name: 'Shekhar Shaha',
+      title: 'Bioinformatics',
+      category: 'Core Instructors',
+      department: 'Structural Biology',
+      institution: 'DeepBio Academy',
+      image: '/images/instructors/shekhar.jpg',
+      email: 'shekhar@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
+      education: [
+        'Ph.D. in Structural Biology (TBA)',
+        'M.S. in Biochemistry (TBA)',
+        'B.S. in Related Field (TBA)'
+      ],
+      experience: [
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
+      ],
+      researchInterests: [
+        'Protein Structure',
+        'Molecular Dynamics',
+        'Drug Design',
+        'Structural Genomics'
+      ],
+      courses: ['BCB205: Structural Biology', 'BCB305: Protein Analysis'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
+    },
+    {
+      id: 'wahidul',
+      name: 'Md. Wahidul Islam',
+      title: 'Microbiologist',
+      category: 'Instructor',
+      department: 'Genomics & Bioinformatics',
+      institution: 'DeepBio Academy',
+      image: '/images/instructors/wahidul.jpg',
+      email: 'wahidul@deepbioacademy.com',
+      phone: 'TBA',
+      office: 'TBA',
+      education: [
+        'Ph.D. in Genomics (TBA)',
+        'M.S. in Molecular Biology (TBA)',
+        'B.S. in Related Field (TBA)'
+      ],
+      experience: [
+        'Industry Experience - TBA',
+        'Research Experience - TBA',
+        'Teaching Experience - TBA'
+      ],
+      researchInterests: [
+        'Comparative Genomics',
+        'Sequence Analysis',
+        'Phylogenetics',
+        'Genome Assembly'
+      ],
+      courses: ['BCB103: Molecular Biology', 'BCB203: Comparative Genomics'],
+      linkedin: '#',
+      orcid: '#',
+      googleScholar: '#'
     }
   ];
 
-  const filteredInstructors = selectedCategory === 'All' 
-    ? instructorMembers 
-    : instructorMembers.filter(instructor => instructor.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-white">
@@ -221,34 +399,24 @@ export default function Instructors() {
         </div>
       </section>
 
-      {/* Instructor Categories */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {instructorCategories.map((category) => (
-              <motion.button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {category}
-              </motion.button>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Instructor Profiles */}
+      {/* Program Administration */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Program Administration</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Leadership and guidance from experienced professionals in computational biology and bioinformatics.
+            </p>
+          </motion.div>
           <div className="grid gap-8">
-            {filteredInstructors.map((instructor, index) => (
+            {instructorMembers.filter(instructor => instructor.category === 'Core Instructors').map((instructor, index) => (
               <motion.div
                 key={instructor.id}
                 className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
@@ -263,7 +431,19 @@ export default function Instructors() {
                     <div className="lg:w-1/4 flex-shrink-0">
                       <div className="relative mb-6">
                         <div className="w-48 h-48 mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 border-4 border-white shadow-lg">
-                          <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-4xl font-bold">
+                          <img
+                            src={instructor.image}
+                            alt={instructor.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback to initials if image fails to load
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const fallbackDiv = target.nextElementSibling as HTMLElement;
+                              if (fallbackDiv) fallbackDiv.classList.remove('hidden');
+                            }}
+                          />
+                          <div className="hidden w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-4xl font-bold">
                             {instructor.name.split(' ').map(n => n[0]).join('')}
                           </div>
                         </div>
@@ -382,14 +562,367 @@ export default function Instructors() {
                                   </div>
                                 </div>
 
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                                {/* Selected Publications */}
+      {/* Teaching Assistants */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Teaching Assistants</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Dedicated research assistants and graduate students supporting course instruction and student learning.
+            </p>
+          </motion.div>
+          <div className="grid gap-8">
+            {instructorMembers.filter(instructor => instructor.category === 'Teaching Assistant').map((instructor, index) => (
+              <motion.div
+                key={instructor.id}
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="p-8">
+                  <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Profile Image & Basic Info */}
+                    <div className="lg:w-1/4 flex-shrink-0">
+                      <div className="relative mb-6">
+                        <div className="w-48 h-48 mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 border-4 border-white shadow-lg">
+                          <img
+                            src={instructor.image}
+                            alt={instructor.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback to initials if image fails to load
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const fallbackDiv = target.nextElementSibling as HTMLElement;
+                              if (fallbackDiv) fallbackDiv.classList.remove('hidden');
+                            }}
+                          />
+                          <div className="hidden w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-4xl font-bold">
+                            {instructor.name.split(' ').map(n => n[0]).join('')}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3 text-center lg:text-left">
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <Building className="w-4 h-4" />
+                          <span>{instructor.institution}</span>
+                        </div>
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <Mail className="w-4 h-4" />
+                          <span>{instructor.email}</span>
+                        </div>
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <MapPin className="w-4 h-4" />
+                          <span>{instructor.office}</span>
+                        </div>
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <Phone className="w-4 h-4" />
+                          <span>{instructor.phone}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Main Content */}
+                    <div className="lg:w-3/4">
+                      <div className="mb-6">
+                        <h3 className="text-3xl font-bold text-gray-900 mb-2">{instructor.name}</h3>
+                        <p className="text-xl text-blue-600 font-semibold mb-1">{instructor.title}</p>
+                        <p className="text-lg text-gray-600">{instructor.department}</p>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">Research Interests</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {instructor.researchInterests.map((interest, index) => (
+                              <span key={index} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                                {interest}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">Courses Taught</h4>
+                          <div className="space-y-2">
+                            {instructor.courses.map((course, index) => (
+                              <div key={index} className="text-sm text-gray-700 bg-gray-50 p-2 rounded">
+                                {course}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div className="flex space-x-4">
+                          {instructor.linkedin && instructor.linkedin !== '#' && (
+                            <motion.a
+                              href={instructor.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-700 transition-colors"
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                            >
+                              <ExternalLink className="w-5 h-5" />
+                            </motion.a>
+                          )}
+                        </div>
+                        
+                        <motion.button
+                          onClick={() => setExpandedInstructor(expandedInstructor === instructor.id ? null : instructor.id)}
+                          className="flex items-center space-x-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-medium"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <span>{expandedInstructor === instructor.id ? 'Less Info' : 'More Info'}</span>
+                          {expandedInstructor === instructor.id ? 
+                            <ChevronDown className="w-4 h-4" /> : 
+                            <ChevronRight className="w-4 h-4" />
+                          }
+                        </motion.button>
+                      </div>
+                      
+                      {/* Expanded Details */}
+                      <div className="mt-6">
+                        <AnimatePresence>
+                          {expandedInstructor === instructor.id && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl space-y-6">
+                                {/* Education */}
                                 <div>
-                                  <h4 className="text-lg font-bold text-gray-900 mb-3">Selected Publications</h4>
+                                  <h4 className="text-lg font-bold text-gray-900 mb-3">Education</h4>
+                                  <div className="space-y-2">
+                                    {instructor.education.map((edu, index) => (
+                                      <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
+                                        <GraduationCap className="w-4 h-4 text-blue-500 mt-0.5" />
+                                        <span>{edu}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                {/* Experience */}
+                                <div>
+                                  <h4 className="text-lg font-bold text-gray-900 mb-3">Experience</h4>
                                   <div className="space-y-3">
-                                    {instructor.selectedPublications.map((pub, index) => (
+                                    {instructor.experience.map((exp, index) => (
                                       <div key={index} className="p-3 bg-white rounded-lg shadow-sm">
-                                        <p className="text-sm text-gray-800 leading-relaxed">{pub}</p>
+                                        <p className="text-sm text-gray-800 leading-relaxed">{exp}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Instructors */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Additional Instructors</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Industry experts and visiting scholars contributing their specialized knowledge and experience.
+            </p>
+          </motion.div>
+          <div className="grid gap-8">
+            {instructorMembers.filter(instructor => 
+              instructor.category !== 'Core Instructors' && 
+              instructor.category !== 'Teaching Assistant'
+            ).map((instructor, index) => (
+              <motion.div
+                key={instructor.id}
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="p-8">
+                  <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Profile Image & Basic Info */}
+                    <div className="lg:w-1/4 flex-shrink-0">
+                      <div className="relative mb-6">
+                        <div className="w-48 h-48 mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 border-4 border-white shadow-lg">
+                          <img
+                            src={instructor.image}
+                            alt={instructor.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback to initials if image fails to load
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const fallbackDiv = target.nextElementSibling as HTMLElement;
+                              if (fallbackDiv) fallbackDiv.classList.remove('hidden');
+                            }}
+                          />
+                          <div className="hidden w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-4xl font-bold">
+                            {instructor.name.split(' ').map(n => n[0]).join('')}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3 text-center lg:text-left">
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <Building className="w-4 h-4" />
+                          <span>{instructor.institution}</span>
+                        </div>
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <Mail className="w-4 h-4" />
+                          <span>{instructor.email}</span>
+                        </div>
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <MapPin className="w-4 h-4" />
+                          <span>{instructor.office}</span>
+                        </div>
+                        <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-600">
+                          <Phone className="w-4 h-4" />
+                          <span>{instructor.phone}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Main Content */}
+                    <div className="lg:w-3/4">
+                      <div className="mb-6">
+                        <h3 className="text-3xl font-bold text-gray-900 mb-2">{instructor.name}</h3>
+                        <p className="text-xl text-blue-600 font-semibold mb-1">{instructor.title}</p>
+                        <p className="text-lg text-gray-600">{instructor.department}</p>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">Research Interests</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {instructor.researchInterests.map((interest, index) => (
+                              <span key={index} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                                {interest}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">Courses Taught</h4>
+                          <div className="space-y-2">
+                            {instructor.courses.map((course, index) => (
+                              <div key={index} className="text-sm text-gray-700 bg-gray-50 p-2 rounded">
+                                {course}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div className="flex space-x-4">
+                          {instructor.linkedin && instructor.linkedin !== '#' && (
+                            <motion.a
+                              href={instructor.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-700 transition-colors"
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                            >
+                              <ExternalLink className="w-5 h-5" />
+                            </motion.a>
+                          )}
+                        </div>
+                        
+                        <motion.button
+                          onClick={() => setExpandedInstructor(expandedInstructor === instructor.id ? null : instructor.id)}
+                          className="flex items-center space-x-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-medium"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <span>{expandedInstructor === instructor.id ? 'Less Info' : 'More Info'}</span>
+                          {expandedInstructor === instructor.id ? 
+                            <ChevronDown className="w-4 h-4" /> : 
+                            <ChevronRight className="w-4 h-4" />
+                          }
+                        </motion.button>
+                      </div>
+                      
+                      {/* Expanded Details */}
+                      <div className="mt-6">
+                        <AnimatePresence>
+                          {expandedInstructor === instructor.id && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl space-y-6">
+                                {/* Education */}
+                                <div>
+                                  <h4 className="text-lg font-bold text-gray-900 mb-3">Education</h4>
+                                  <div className="space-y-2">
+                                    {instructor.education.map((edu, index) => (
+                                      <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
+                                        <GraduationCap className="w-4 h-4 text-blue-500 mt-0.5" />
+                                        <span>{edu}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                {/* Experience */}
+                                <div>
+                                  <h4 className="text-lg font-bold text-gray-900 mb-3">Experience</h4>
+                                  <div className="space-y-3">
+                                    {instructor.experience.map((exp, index) => (
+                                      <div key={index} className="p-3 bg-white rounded-lg shadow-sm">
+                                        <p className="text-sm text-gray-800 leading-relaxed">{exp}</p>
                                       </div>
                                     ))}
                                   </div>
@@ -432,7 +965,9 @@ export default function Instructors() {
                 <span>Meet Our Instructors</span>
               </motion.button>
               <motion.a
-                href="/admissions"
+                href="https://forms.gle/kEdbyBf1bHsDmiU57"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
