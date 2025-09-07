@@ -127,9 +127,9 @@ export default function Admissions() {
     {
       icon: <DollarSign className="w-8 h-8 text-green-600" />,
       title: "Program Fees",
-      value: "৳60,000 BDT",
-      description: "Total professional training fees",
-      details: "Includes all course materials, lab access, and certification"
+      value: "৳80,000 BDT",
+      description: "Base program fees (20K discount available)",
+      details: "Early applications & Academic Partners get ৳20,000 discount"
     },
     {
       icon: <Users className="w-8 h-8 text-blue-600" />,
@@ -423,18 +423,35 @@ export default function Admissions() {
                     <span className="font-semibold text-gray-800">Application Fee</span>
                     <span className="font-bold text-blue-600">৳00 BDT</span>
                   </div>
+                  <div className="flex items-center justify-between p-4 bg-orange-50 rounded-xl">
+                    <span className="font-semibold text-gray-800">Base Program Fee</span>
+                    <span className="font-bold text-orange-600">৳80,000 BDT</span>
+                  </div>
                   <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
-                    <span className="font-semibold text-gray-800">Acceptance Fee</span>
-                    <span className="font-bold text-green-600">৳10,000 BDT</span>
+                    <span className="font-semibold text-gray-800">Early Bird & Academic Partner Discount</span>
+                    <span className="font-bold text-green-600">-৳20,000 BDT</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-purple-50 rounded-xl">
+                    <span className="font-semibold text-gray-800">Acceptance Fee</span>
+                    <span className="font-bold text-purple-600">৳10,000 BDT</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-indigo-50 rounded-xl">
                     <span className="font-semibold text-gray-800">Remaining Fees</span>
-                    <span className="font-bold text-purple-600">৳50,000 BDT</span>
+                    <span className="font-bold text-indigo-600">৳50,000 BDT</span>
                   </div>
                   <div className="border-t-2 border-gray-200 pt-4">
                     <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl">
-                      <span className="text-xl font-bold">Total Program Fees</span>
+                      <span className="text-xl font-bold">Total After Discount</span>
                       <span className="text-2xl font-bold">৳60,000 BDT</span>
+                    </div>
+                  </div>
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mt-4">
+                    <div className="flex items-start space-x-3">
+                      <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-yellow-800">Discount Eligibility</p>
+                        <p className="text-sm text-yellow-700 mt-1">Early applications and Academic Partners receive a ৳20,000 discount off the base fee of ৳80,000.</p>
+                      </div>
                     </div>
                   </div>
                 </div>

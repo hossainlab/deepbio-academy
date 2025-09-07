@@ -11,11 +11,236 @@ import {
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 
+// =============================================================================
+// DATA & CONFIGURATION
+// =============================================================================
+
+const quarters = [
+  {
+    title: "Quarter 1",
+    subtitle: "Foundations",
+    description: "Build your foundational knowledge in molecular biology and computational methods",
+    icon: "🧬",
+    courses: [
+      {
+        code: "BCB101",
+        credits: 3,
+        title: "Introduction to Bioinformatics and Computational Biology",
+        content: "Advanced concepts in genetics, gene expression, and epigenetics. In-depth study of genomics, transcriptomics, proteomics, and single-cell sequencing. Practical use of NCBI, EBI, UniProt databases.",
+        goals: "Develop a strong understanding of molecular biology and 'omics technologies, and learn to navigate key biological databases.",
+        difficulty: "Intermediate",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB102",
+        credits: 3,
+        title: "Programming and Statistical Computing for Life Sciences",
+        content: "Advanced Python scripting for data manipulation (Pandas, NumPy, BioPython). Statistical computing with R. Mandatory use of Git and GitHub for version control.",
+        goals: "Master essential programming skills in Python and R for data analysis, and establish a foundation in collaborative software development.",
+        difficulty: "Intermediate",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB103",
+        credits: 3,
+        title: "Mathematics for Bioinformatics and Computational Biology",
+        content: "In-depth exploration of key databases and programmatic access via APIs. Hands-on work with standard data formats like FASTA, FASTQ, and VCF.",
+        goals: "Gain proficiency in accessing, parsing, and managing diverse biological data formats, and learn to automate data retrieval.",
+        difficulty: "Beginner",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB104",
+        credits: 2,
+        title: "Semester Project I",
+        content: "First semester capstone project applying foundational concepts learned in BCB101-103. Students work individually or in small groups on a bioinformatics problem.",
+        goals: "Apply foundational knowledge to solve a real-world bioinformatics problem and develop project management skills.",
+        difficulty: "Intermediate",
+        duration: "12 weeks"
+      }
+    ]
+  },
+  {
+    title: "Quarter 2",
+    subtitle: "Core Methods",
+    description: "Master essential bioinformatics analysis techniques and workflows",
+    icon: "⚗️",
+    courses: [
+      {
+        code: "BCB201",
+        credits: 3,
+        title: "Genomics, Proteomics and Transcriptomics",
+        content: "Comprehensive workflows for read quality control, alignment, and assembly. Differential expression analysis of RNA-seq data using DESeq2 and EdgeR.",
+        goals: "Design and execute complete bioinformatics pipelines for NGS data, from raw reads to meaningful biological insights.",
+        difficulty: "Advanced",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB202",
+        credits: 3,
+        title: "Metagenomics and Microbiome Data Analysis",
+        content: "Analysis of microbial communities through metagenomic sequencing. Taxonomic profiling, functional annotation, and comparative microbiome analysis.",
+        goals: "Understand microbiome analysis workflows and interpret microbial community structure and function.",
+        difficulty: "Advanced",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB203",
+        credits: 3,
+        title: "Structural Bioinformatics: Molecular Modeling and Simulation",
+        content: "Protein structure prediction, molecular docking, and molecular dynamics simulations. Understanding protein-drug interactions and structure-function relationships.",
+        goals: "Master computational structural biology techniques for understanding protein function and drug design.",
+        difficulty: "Intermediate",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB204",
+        credits: 2,
+        title: "Semester Project II",
+        content: "Second semester project building on advanced analysis techniques. Focus on genomics, proteomics, or structural bioinformatics applications.",
+        goals: "Apply intermediate bioinformatics skills to complex biological problems and develop advanced analytical thinking.",
+        difficulty: "Advanced",
+        duration: "12 weeks"
+      }
+    ]
+  },
+  {
+    title: "Quarter 3",
+    subtitle: "AI & Machine Learning",
+    description: "Harness the power of artificial intelligence in biological research",
+    icon: "🤖",
+    courses: [
+      {
+        code: "BCB301",
+        credits: 3,
+        title: "Machine Learning in Computational Biology",
+        content: "Supervised and unsupervised learning models for biological data. Feature engineering, model validation, and ethical considerations in biomedical ML.",
+        goals: "Apply machine learning algorithms to solve biological problems, from disease classification to biomarker discovery.",
+        difficulty: "Advanced",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB302",
+        credits: 3,
+        title: "Computational Systems Biology: Deep Learning in the Life Sciences",
+        content: "Understanding CNNs, RNNs, and Transformers. Applications of Generative AI to design novel proteins and optimize drug candidates.",
+        goals: "Develop deep learning models for complex biological data and leverage Generative AI for innovative research.",
+        difficulty: "Expert",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB303",
+        credits: 3,
+        title: "Generative AI for Life Sciences",
+        content: "Application of generative AI models for drug discovery, protein design, and biological sequence generation. Large language models in biology.",
+        goals: "Master generative AI techniques for innovative biological research and drug discovery applications.",
+        difficulty: "Advanced",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB304",
+        credits: 2,
+        title: "Semester Project III",
+        content: "Advanced research project incorporating machine learning and AI techniques. Students tackle complex biological problems using cutting-edge computational methods.",
+        goals: "Demonstrate mastery of advanced computational biology techniques and ability to innovate in the field.",
+        difficulty: "Expert",
+        duration: "12 weeks"
+      }
+    ]
+  },
+  {
+    title: "Quarter 4",
+    subtitle: "Capstone",
+    description: "Apply your knowledge in real-world research projects",
+    icon: "🎓",
+    courses: [
+      {
+        code: "BCB401",
+        credits: 6,
+        title: "Capstone Research Project",
+        content: "A significant research project with an instructor mentor from DeepBio Limited. Students work on cutting-edge problems in collaboration with industry partners.",
+        goals: "Independently apply all skills learned throughout the program to a real-world problem, demonstrating professional research capabilities.",
+        difficulty: "Expert",
+        duration: "12 weeks"
+      },
+      {
+        code: "BCB402",
+        credits: 3,
+        title: "Scientific Communication and Career Readiness",
+        content: "Scientific writing, professional presentations, data visualization, grant writing, IP management, and biotech career pathways.",
+        goals: "Effectively communicate complex scientific findings and prepare for a successful career in bioinformatics industry or academia.",
+        difficulty: "Intermediate",
+        duration: "12 weeks"
+      }
+    ]
+  }
+];
+
+const stats = [
+  { number: "100%", label: "Job Ready", description: "within 6 months" },
+  { number: "42", label: "Credits", description: "internationally recognized" },
+  { number: "3+", label: "Industry Partners", description: "for internships" },
+  { number: "24/7", label: "Support", description: "technical assistance" }
+];
+
+const features = [
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "International Standard",
+    description: "International standard program designed by leading experts."
+  },
+  {
+    icon: <Zap className="w-8 h-8" />,
+    title: "Hands-on Learning",
+    description: "Real-world projects using cutting-edge tools and datasets from industry partners"
+  },
+  {
+    icon: <Target className="w-8 h-8" />,
+    title: "Career Focused",
+    description: "Designed with input from hiring managers at top biotech and pharmaceutical companies"
+  },
+  {
+    icon: <TrendingUp className="w-8 h-8" />,
+    title: "Future-Ready Skills",
+    description: "Learn the latest in AI, machine learning, and computational biology innovations"
+  }
+];
+
+const mentorTestimonials = [
+  {
+    name: "Sayed Mashequl Bari",
+    role: "Assistant Professor, Faculty of Fisheries and Marine Science",
+    institution: "Sher-e-Bangla Agricultural University, Dhaka, Bangladesh",
+    image: "/images/mentors/bari.jpeg",
+    quote: "Bioinformatics and Computational Biology are at the forefront of modern science, shaping breakthroughs in genomics, drug discovery, and personalized medicine. Programs like the Professional Training in Bioinformatics & Computational Biology by DeepBio, under the guidance of Md. Jubayer Hossain, provide students in Bangladesh with an invaluable opportunity to gain hands-on expertise in these rapidly evolving fields."
+  },
+  {
+    name: "Syeda Tasneem Towhid, PhD",
+    role: "Associate Professor, Department of Microbiology",
+    institution: "Jagannath University",
+    image: "/images/mentors/tasneem.jpg",
+    quote: "I am pleased we are finally having an opportunity to train the graduate students in advanced AI techniques that would help us reach international levels."
+  },
+  {
+    name: "Sabia Sultana",
+    role: "Assistant Professor, Department of Microbiology",
+    institution: "Jagannath University",
+    image: "/images/mentors/sabia.jpg",
+    quote: "I strongly believe this One-Year Professional Training in Bioinformatics & Computational Biology is more than just an academic program—it is an opportunity to step into the future of science. This program will bridge the gap between theory and practice, giving you the ability to analyze real-world biological data and prepare for global opportunities. The skills you gain here will open doors to higher studies, research positions, and meaningful careers in healthcare, biotechnology, and agriculture. You will become part of a growing community of young researchers making lasting contributions to Bangladesh and the global scientific community."
+  }
+];
+
+// =============================================================================
+// MAIN COMPONENT
+// =============================================================================
+
 export default function Home() {
+  // State
   const [activeTab, setActiveTab] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
+  // Effects
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -29,258 +254,17 @@ export default function Home() {
     return () => clearInterval(testimonialInterval);
   }, []);
 
-  const quarters = [
-    {
-      title: "Quarter 1",
-      subtitle: "Foundations",
-      description: "Build your foundational knowledge in molecular biology and computational methods",
-      icon: "🧬",
-      courses: [
-        {
-          code: "BCB101",
-          credits: 3,
-          title: "Introduction to Bioinformatics and Computational Biology",
-          content: "Advanced concepts in genetics, gene expression, and epigenetics. In-depth study of genomics, transcriptomics, proteomics, and single-cell sequencing. Practical use of NCBI, EBI, UniProt databases.",
-          goals: "Develop a strong understanding of molecular biology and 'omics technologies, and learn to navigate key biological databases.",
-          difficulty: "Intermediate",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB102",
-          credits: 3,
-          title: "Programming and Statistical Computing for Life Sciences",
-          content: "Advanced Python scripting for data manipulation (Pandas, NumPy, BioPython). Statistical computing with R. Mandatory use of Git and GitHub for version control.",
-          goals: "Master essential programming skills in Python and R for data analysis, and establish a foundation in collaborative software development.",
-          difficulty: "Intermediate",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB103",
-          credits: 3,
-          title: "Mathematics for Bioinformatics and Computational Biology",
-          content: "In-depth exploration of key databases and programmatic access via APIs. Hands-on work with standard data formats like FASTA, FASTQ, and VCF.",
-          goals: "Gain proficiency in accessing, parsing, and managing diverse biological data formats, and learn to automate data retrieval.",
-          difficulty: "Beginner",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB104",
-          credits: 2,
-          title: "Semester Project I",
-          content: "First semester capstone project applying foundational concepts learned in BCB101-103. Students work individually or in small groups on a bioinformatics problem.",
-          goals: "Apply foundational knowledge to solve a real-world bioinformatics problem and develop project management skills.",
-          difficulty: "Intermediate",
-          duration: "12 weeks"
-        }
-      ]
-    },
-    {
-      title: "Quarter 2",
-      subtitle: "Core Methods",
-      description: "Master essential bioinformatics analysis techniques and workflows",
-      icon: "⚗️",
-      courses: [
-        {
-          code: "BCB201",
-          credits: 3,
-          title: "Genomics, Proteomics and Transcriptomics",
-          content: "Comprehensive workflows for read quality control, alignment, and assembly. Differential expression analysis of RNA-seq data using DESeq2 and EdgeR.",
-          goals: "Design and execute complete bioinformatics pipelines for NGS data, from raw reads to meaningful biological insights.",
-          difficulty: "Advanced",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB202",
-          credits: 3,
-          title: "Metagenomics and Microbiome Data Analysis",
-          content: "Analysis of microbial communities through metagenomic sequencing. Taxonomic profiling, functional annotation, and comparative microbiome analysis.",
-          goals: "Understand microbiome analysis workflows and interpret microbial community structure and function.",
-          difficulty: "Advanced",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB203",
-          credits: 3,
-          title: "Structural Bioinformatics: Molecular Modeling and Simulation",
-          content: "Protein structure prediction, molecular docking, and molecular dynamics simulations. Understanding protein-drug interactions and structure-function relationships.",
-          goals: "Master computational structural biology techniques for understanding protein function and drug design.",
-          difficulty: "Intermediate",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB204",
-          credits: 2,
-          title: "Semester Project II",
-          content: "Second semester project building on advanced analysis techniques. Focus on genomics, proteomics, or structural bioinformatics applications.",
-          goals: "Apply intermediate bioinformatics skills to complex biological problems and develop advanced analytical thinking.",
-          difficulty: "Advanced",
-          duration: "12 weeks"
-        }
-      ]
-    },
-    {
-      title: "Quarter 3",
-      subtitle: "AI & Machine Learning",
-      description: "Harness the power of artificial intelligence in biological research",
-      icon: "🤖",
-      courses: [
-        {
-          code: "BCB301",
-          credits: 3,
-          title: "Machine Learning in Computational Biology",
-          content: "Supervised and unsupervised learning models for biological data. Feature engineering, model validation, and ethical considerations in biomedical ML.",
-          goals: "Apply machine learning algorithms to solve biological problems, from disease classification to biomarker discovery.",
-          difficulty: "Advanced",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB302",
-          credits: 3,
-          title: "Computational Systems Biology: Deep Learning in the Life Sciences",
-          content: "Understanding CNNs, RNNs, and Transformers. Applications of Generative AI to design novel proteins and optimize drug candidates.",
-          goals: "Develop deep learning models for complex biological data and leverage Generative AI for innovative research.",
-          difficulty: "Expert",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB303",
-          credits: 3,
-          title: "Generative AI for Life Sciences",
-          content: "Application of generative AI models for drug discovery, protein design, and biological sequence generation. Large language models in biology.",
-          goals: "Master generative AI techniques for innovative biological research and drug discovery applications.",
-          difficulty: "Advanced",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB304",
-          credits: 2,
-          title: "Semester Project III",
-          content: "Advanced research project incorporating machine learning and AI techniques. Students tackle complex biological problems using cutting-edge computational methods.",
-          goals: "Demonstrate mastery of advanced computational biology techniques and ability to innovate in the field.",
-          difficulty: "Expert",
-          duration: "12 weeks"
-        }
-      ]
-    },
-    {
-      title: "Quarter 4",
-      subtitle: "Capstone",
-      description: "Apply your knowledge in real-world research projects",
-      icon: "🎓",
-      courses: [
-        {
-          code: "BCB401",
-          credits: 6,
-          title: "Capstone Research Project",
-          content: "A significant research project with an instructor mentor from DeepBio Limited. Students work on cutting-edge problems in collaboration with industry partners.",
-          goals: "Independently apply all skills learned throughout the program to a real-world problem, demonstrating professional research capabilities.",
-          difficulty: "Expert",
-          duration: "12 weeks"
-        },
-        {
-          code: "BCB402",
-          credits: 3,
-          title: "Scientific Communication and Career Readiness",
-          content: "Scientific writing, professional presentations, data visualization, grant writing, IP management, and biotech career pathways.",
-          goals: "Effectively communicate complex scientific findings and prepare for a successful career in bioinformatics industry or academia.",
-          difficulty: "Intermediate",
-          duration: "12 weeks"
-        }
-      ]
-    }
-  ];
-
-  const stats = [
-    { number: "100%", label: "Job Ready", description: "within 6 months" },
-    { number: "42", label: "Credits", description: "internationally recognized" },
-    { number: "3+", label: "Industry Partners", description: "for internships" },
-    { number: "24/7", label: "Support", description: "technical assistance" }
-  ];
-
-  const features = [
-    {
-      icon: <Globe className="w-8 h-8" />,
-      title: "International Standard",
-      description: "International standard program designed by leading experts."
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Hands-on Learning",
-      description: "Real-world projects using cutting-edge tools and datasets from industry partners"
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Career Focused",
-      description: "Designed with input from hiring managers at top biotech and pharmaceutical companies"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Future-Ready Skills",
-      description: "Learn the latest in AI, machine learning, and computational biology innovations"
-    }
-  ];
-
-  // Testimonials array - currently commented out since it's the first cohort
-  // const testimonials = [
-  //   {
-  //     name: "Dr. Sarah Chen",
-  //     role: "Bioinformatics Director, Pfizer",
-  //     image: "👩‍💼",
-  //     quote: "The BCB program produces graduates who are immediately productive in our research teams. The curriculum is perfectly aligned with industry needs.",
-  //     achievement: "Certificate of Completion with Distinction",
-  //     careerImpact: "Led 3 drug discovery projects, $2M in funding secured",
-  //     graduationYear: "2022"
-  //   },
-  //   {
-  //     name: "Ahmed Rahman",
-  //     role: "PhD Student, MIT",
-  //     image: "👨‍🎓",
-  //     quote: "This program gave me the foundation I needed to pursue my PhD at MIT. The hands-on experience with real datasets was invaluable.",
-  //     achievement: "Certificate of Completion + AI Specialization",
-  //     careerImpact: "Published 4 papers in Nature Biotechnology",
-  //     graduationYear: "2023"
-  //   },
-  //   {
-  //     name: "Dr. Maria Rodriguez",
-  //     role: "Senior Scientist, Illumina",
-  //     image: "👩‍🔬",
-  //     quote: "As a hiring manager, I specifically look for BCB program graduates. Their training in both biology and computation is exceptional.",
-  //     achievement: "Certificate of Completion with High Distinction",
-  //     careerImpact: "Promoted to team lead, 45% salary increase",
-  //     graduationYear: "2021"
-  //   }
-  // ];
-
-  const mentorTestimonials = [
-    {
-      name: "Sayed Mashequl Bari",
-      role: "Assistant Professor, Faculty of Fisheries and Marine Science",
-      institution: "Sher-e-Bangla Agricultural University, Dhaka, Bangladesh",
-      image: "/images/mentors/bari.jpeg",
-      quote: "Bioinformatics and Computational Biology are at the forefront of modern science, shaping breakthroughs in genomics, drug discovery, and personalized medicine. Programs like the Professional Training in Bioinformatics & Computational Biology by DeepBio, under the guidance of Md. Jubayer Hossain, provide students in Bangladesh with an invaluable opportunity to gain hands-on expertise in these rapidly evolving fields."
-    },
-    {
-      name: "Syeda Tasneem Towhid, PhD",
-      role: "Associate Professor, Department of Microbiology",
-      institution: "Jagannath University",
-      image: "/images/mentors/tasneem.jpg",
-      quote: "I am pleased we are finally having an opportunity to train the graduate students in advanced AI techniques that would help us reach international levels."
-    },
-    {
-      name: "Sabia Sultana",
-      role: "Assistant Professor, Department of Microbiology",
-      institution: "Jagannath University",
-      image: "/images/mentors/sabia.jpg",
-      quote: "I strongly believe this One-Year Professional Training in Bioinformatics & Computational Biology is more than just an academic program—it is an opportunity to step into the future of science. This program will bridge the gap between theory and practice, giving you the ability to analyze real-world biological data and prepare for global opportunities. The skills you gain here will open doors to higher studies, research positions, and meaningful careers in healthcare, biotechnology, and agriculture. You will become part of a growing community of young researchers making lasting contributions to Bangladesh and the global scientific community."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
+      
+      {/* =================================================================== */}
+      {/* NAVIGATION */}
+      {/* =================================================================== */}
       <Navbar isScrolled={isScrolled} />
 
-      {/* Hero Section */}
+      {/* =================================================================== */}
+      {/* HERO SECTION */}
+      {/* =================================================================== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -399,7 +383,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Program Overview */}
+      {/* =================================================================== */}
+      {/* PROGRAM OVERVIEW */}
+      {/* =================================================================== */}
       <section id="program" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -471,45 +457,12 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Call-to-action section */}
-          <motion.div
-            className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-3xl p-12 md:p-16 text-white overflow-hidden"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Healthcare?</h3>
-              <p className="text-xl text-gray-200 mb-8 max-w-3xl">
-                The revolution in high-throughput sequencing and AI is creating unprecedented opportunities. 
-                Join the next generation of bioinformaticians and computational biologists who are transforming medicine, agriculture, and biotechnology.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button
-                  className="px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Download className="w-5 h-5" />
-                  <span>Download Brochure</span>
-                </motion.button>
-                <motion.button
-                  className="px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-gray-900 transition-all flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  <span>Schedule a Call</span>
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* =================================================================== */}
+      {/* FEATURES SECTION */}
+      {/* =================================================================== */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -550,7 +503,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Curriculum Section */}
+      {/* =================================================================== */}
+      {/* CURRICULUM SECTION */}
+      {/* =================================================================== */}
       <section id="curriculum" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -674,7 +629,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Upcoming Events Section */}
+      {/* =================================================================== */}
+      {/* UPCOMING EVENTS SECTION */}
+      {/* =================================================================== */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -752,87 +709,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials - Commented out for first cohort 
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Certificate Holders Success Stories
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how our certified alumni are making impact across the globe with their professional credentials
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="flex items-center mb-6">
-                  <div className="text-4xl mr-4">{testimonial.image}</div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                    <p className="text-xs text-blue-600">Graduated {testimonial.graduationYear}</p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 leading-relaxed italic mb-6">"{testimonial.quote}"</p>
-                
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl mb-4">
-                  <div className="flex items-center mb-2">
-                    <Award className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-sm font-semibold text-gray-900">Certificate Earned:</span>
-                  </div>
-                  <p className="text-sm text-blue-700 font-medium">{testimonial.achievement}</p>
-                </div>
-
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl mb-6">
-                  <div className="flex items-center mb-2">
-                    <TrendingUp className="w-4 h-4 text-green-600 mr-2" />
-                    <span className="text-sm font-semibold text-gray-900">Career Impact:</span>
-                  </div>
-                  <p className="text-sm text-green-700 font-medium">{testimonial.careerImpact}</p>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <motion.a
-                    href="https://forms.gle/kEdbyBf1bHsDmiU57"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-700 transition-colors text-sm font-semibold flex items-center space-x-1"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <span>Apply Now</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </motion.a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      */}
-
-      {/* Teacher/Mentor Endorsements Section */}
+      {/* =================================================================== */}
+      {/* TEACHER/MENTOR ENDORSEMENTS SECTION */}
+      {/* =================================================================== */}
       <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -970,121 +849,12 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Enhanced Call-to-action at bottom of mentor section */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-              {/* Enhanced background decorations */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl -translate-y-48 translate-x-48"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-indigo-400/10 to-pink-400/10 rounded-full blur-3xl translate-y-32 -translate-x-32"></div>
-              
-              
-              <div className="relative z-10">
-                <div className="text-center mb-12">
-                  <div className="flex items-center justify-center mb-8">
-                    <div className="relative">
-                      <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl">
-                        <GraduationCap className="w-10 h-10 text-white" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
-                        <Award className="w-3 h-3 text-yellow-900" />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                    Join the Movement Transforming <br />
-                    <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-                      Science in Bangladesh
-                    </span>
-                  </h3>
-                  
-                  <p className="text-xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed">
-                    Take your respected teachers' advice and be part of the first generation of computational biologists 
-                    who will drive scientific innovation and healthcare advancement in Bangladesh and beyond.
-                  </p>
-                </div>
-                
-                {/* Stats row */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                  {[
-                    { number: "3+", label: "Leading Universities", sublabel: "Supporting this program" },
-                    { number: "100+", label: "Academic Partners", sublabel: "Backing our curriculum" },
-                    { number: "42", label: "Credit Hours", sublabel: "International standard" },
-                    { number: "95%", label: "Endorsement Rate", sublabel: "From educators surveyed" }
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      className="text-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.number}</div>
-                      <div className="text-sm font-semibold text-blue-200 mb-1">{stat.label}</div>
-                      <div className="text-xs text-blue-300">{stat.sublabel}</div>
-                    </motion.div>
-                  ))}
-                </div>
-                
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                  <motion.a
-                    href="https://forms.gle/PAs7XKJxJnAhZ5o58"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group px-10 py-4 bg-white text-blue-700 font-bold text-lg rounded-full shadow-2xl hover:shadow-3xl hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3"
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <GraduationCap className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-                    <span>Start Your Application</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </motion.a>
-                  
-                  <motion.a
-                    href="https://docs.google.com/forms/d/e/your-mentor-feedback-form"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group px-10 py-4 bg-transparent border-2 border-white/50 text-white font-bold text-lg rounded-full hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 flex items-center justify-center space-x-3"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Mail className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                    <span>Share Your Endorsement</span>
-                    <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  </motion.a>
-                </div>
-                
-                {/* Trust indicators */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 text-sm text-blue-200">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span>Trusted by 3+ Universities</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Award className="w-5 h-5 text-yellow-400" />
-                    <span>Internationally Recognized</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-purple-300" />
-                    <span>Educator Endorsed</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* Certificate Showcase Section */}
+      {/* =================================================================== */}
+      {/* CERTIFICATE SHOWCASE SECTION */}
+      {/* =================================================================== */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1301,16 +1071,100 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{cert.title}</h3>
                 <p className="text-gray-600 text-sm">{cert.description}</p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <span className="text-xs text-blue-600 font-semibold">Internationally Recognized</span>
-                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* =================================================================== */}
+      {/* PRICING SECTION */}
+      {/* =================================================================== */}
+      <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Program Investment</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Transparent pricing with exceptional value for world-class education
+            </p>
+          </motion.div>
+
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200 mb-16">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8">Course Fees & Discounts</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-orange-50 rounded-xl border-l-4 border-orange-500">
+                    <span className="font-semibold text-gray-800">Base Course Fee</span>
+                    <span className="font-bold text-orange-600 text-xl">৳80,000 BDT</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl border-l-4 border-green-500">
+                    <div>
+                      <span className="font-semibold text-gray-800 block">Early Bird & Academic Partner Discount</span>
+                      <span className="text-sm text-gray-600">Available for qualifying applicants</span>
+                    </div>
+                    <span className="font-bold text-green-600 text-xl">-৳20,000 BDT</span>
+                  </div>
+                  <div className="border-t-2 border-gray-200 pt-6">
+                    <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow-lg">
+                      <div>
+                        <span className="text-xl font-bold block">Final Course Fee</span>
+                        <span className="text-sm opacity-90">After discount (if eligible)</span>
+                      </div>
+                      <span className="text-3xl font-bold">৳60,000 BDT</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <h4 className="text-2xl font-bold text-gray-900">Discount Eligibility</h4>
+                <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6">
+                  <div className="flex items-start space-x-3 mb-4">
+                    <Award className="w-6 h-6 text-yellow-600 mt-1 flex-shrink-0" />
+                    <div>
+                      <h5 className="font-bold text-yellow-800 mb-2">Early Applications</h5>
+                      <p className="text-sm text-yellow-700">Apply early and save ৳20,000 on your course fees</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Users className="w-6 h-6 text-yellow-600 mt-1 flex-shrink-0" />
+                    <div>
+                      <h5 className="font-bold text-yellow-800 mb-2">Academic Partners</h5>
+                      <p className="text-sm text-yellow-700">Students from partner universities receive automatic discount</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h5 className="font-semibold text-gray-900">What's Included</h5>
+                  {[
+                    "42 credits of intensive coursework",
+                    "Industry mentorship and networking",
+                    "Career placement assistance",
+                    "International certificates",
+                    "Research project supervision"
+                  ].map((benefit, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =================================================================== */}
+      {/* CTA SECTION */}
+      {/* =================================================================== */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1360,7 +1214,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* =================================================================== */}
+      {/* FOOTER */}
+      {/* =================================================================== */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-12">
