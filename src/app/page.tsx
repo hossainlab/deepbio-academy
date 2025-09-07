@@ -6,18 +6,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   BookOpen, Users, Award, ArrowRight, Mail, Phone, MapPin, GraduationCap, 
-  Globe, Calendar, Clock, CheckCircle, Download, ExternalLink, Zap, Target, TrendingUp
+  Globe, Calendar, Clock, CheckCircle, Download, ExternalLink, Zap, Target, TrendingUp,
+  ChevronLeft, ChevronRight
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const testimonialInterval = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % mentorTestimonials.length);
+    }, 6000);
+    return () => clearInterval(testimonialInterval);
   }, []);
 
   const quarters = [
@@ -824,7 +833,7 @@ export default function Home() {
       */}
 
       {/* Teacher/Mentor Endorsements Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-20"
@@ -833,6 +842,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-6">
+              <Users className="w-4 h-4 mr-2" />
+              Endorsed by Academic Leaders
+            </div>
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Endorsed by Leading Educators
             </h2>
@@ -842,137 +855,228 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {mentorTestimonials.map((mentor, index) => (
-              <motion.div
-                key={mentor.name}
-                className="group bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 relative overflow-hidden"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                {/* Decorative background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Quote marks decoration */}
-                <div className="absolute top-4 right-6 text-6xl text-blue-100 font-serif leading-none">"</div>
-                
-                <div className="relative z-10">
-                  {/* Profile Section */}
-                  <div className="text-center mb-6">
-                    <div className="relative w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
-                      <Image
-                        src={mentor.image}
-                        alt={mentor.name}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const fallback = target.nextElementSibling as HTMLDivElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100" style={{ display: 'none' }}>
-                        <div className="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center">
-                          <svg className="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                          </svg>
+          {/* Testimonial Slider */}
+          <div className="relative mb-16">
+            <div className="overflow-hidden rounded-3xl">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTestimonial}
+                  initial={{ opacity: 0, x: 300 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -300 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden"
+                >
+                  {/* Background decoration */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-indigo-600/5"></div>
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-30 -translate-y-32 translate-x-32"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+                      {/* Profile */}
+                      <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 lg:w-1/3">
+                        <div className="relative">
+                          <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl overflow-hidden shadow-xl ring-4 ring-white">
+                            <Image
+                              src={mentorTestimonials[activeTestimonial].image}
+                              alt={mentorTestimonials[activeTestimonial].name}
+                              fill
+                              className="object-cover"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const fallback = target.nextElementSibling as HTMLDivElement;
+                                if (fallback) fallback.style.display = 'flex';
+                              }}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100" style={{ display: 'none' }}>
+                              <div className="w-12 h-12 rounded-xl bg-white/80 flex items-center justify-center">
+                                <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                            <Award className="w-4 h-4 text-white" />
+                          </div>
+                        </div>
+                        
+                        <div className="text-center sm:text-left">
+                          <h3 className="text-2xl font-bold text-gray-900 mb-2">{mentorTestimonials[activeTestimonial].name}</h3>
+                          <p className="text-blue-600 font-semibold mb-1">{mentorTestimonials[activeTestimonial].role}</p>
+                          <p className="text-gray-600 text-sm leading-relaxed">{mentorTestimonials[activeTestimonial].institution}</p>
+                          <div className="flex justify-center sm:justify-start mt-3">
+                            <div className="flex space-x-1">
+                              {[...Array(5)].map((_, i) => (
+                                <div key={i} className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Quote */}
+                      <div className="lg:w-2/3">
+                        <blockquote className="text-lg lg:text-xl text-gray-700 leading-relaxed font-medium mb-6">
+                          {mentorTestimonials[activeTestimonial].quote}
+                        </blockquote>
+                        <div className="flex items-center">
+                          <div className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+                            Academic Endorsement
+                          </div>
                         </div>
                       </div>
                     </div>
-                    
-                    <h4 className="text-xl font-bold text-gray-900 mb-2 select-text group-hover:text-blue-700 transition-colors">
-                      {mentor.name}
-                    </h4>
-                    
-                    <p className="text-sm font-medium text-blue-600 mb-1 select-text">
-                      {mentor.role}
-                    </p>
-                    
-                    <p className="text-sm text-gray-600 select-text">
-                      {mentor.institution}
-                    </p>
                   </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-                  {/* Quote Section */}
-                  <blockquote className="text-gray-700 text-sm leading-relaxed select-text mb-6 min-h-[120px] flex items-start">
-                    <span className="italic">"{mentor.quote}"</span>
-                  </blockquote>
+            {/* Navigation buttons */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
+              <motion.button
+                onClick={() => setActiveTestimonial((prev) => (prev - 1 + mentorTestimonials.length) % mentorTestimonials.length)}
+                className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center pointer-events-auto group"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors" />
+              </motion.button>
+              
+              <motion.button
+                onClick={() => setActiveTestimonial((prev) => (prev + 1) % mentorTestimonials.length)}
+                className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center pointer-events-auto group"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors" />
+              </motion.button>
+            </div>
+          </div>
 
-                  {/* Bottom decoration */}
-                  <div className="flex items-center justify-center">
-                    <div className="flex space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 rounded-full bg-blue-200 group-hover:bg-blue-400 transition-colors duration-300"></div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+          {/* Slider Indicators */}
+          <div className="flex justify-center space-x-3 mb-16">
+            {mentorTestimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTestimonial(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === activeTestimonial
+                    ? 'bg-blue-600 scale-125'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
             ))}
           </div>
 
-          {/* Call-to-action at bottom of mentor section */}
+          {/* Enhanced Call-to-action at bottom of mentor section */}
           <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
+            className="relative"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-3xl p-12 text-white relative overflow-hidden">
-              {/* Background decoration */}
+            <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+              {/* Enhanced background decorations */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-              <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                <svg className="w-full h-full" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <polygon points="0,100 100,0 100,100" />
-                </svg>
-              </div>
+              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl -translate-y-48 translate-x-48"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-indigo-400/10 to-pink-400/10 rounded-full blur-3xl translate-y-32 -translate-x-32"></div>
+              
               
               <div className="relative z-10">
-                <div className="flex items-center justify-center mb-8">
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <GraduationCap className="w-10 h-10 text-white" />
+                <div className="text-center mb-12">
+                  <div className="flex items-center justify-center mb-8">
+                    <div className="relative">
+                      <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl">
+                        <GraduationCap className="w-10 h-10 text-white" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <Award className="w-3 h-3 text-yellow-900" />
+                      </div>
+                    </div>
                   </div>
+                  
+                  <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                    Join the Movement Transforming <br />
+                    <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                      Science in Bangladesh
+                    </span>
+                  </h3>
+                  
+                  <p className="text-xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed">
+                    Take your respected teachers' advice and be part of the first generation of computational biologists 
+                    who will drive scientific innovation and healthcare advancement in Bangladesh and beyond.
+                  </p>
                 </div>
                 
-                <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                  Join the Movement Transforming Science in Bangladesh
-                </h3>
-                <p className="text-xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed">
-                  Take your respected teachers' advice and be part of the first generation of computational biologists 
-                  who will drive scientific innovation and healthcare advancement in Bangladesh and beyond.
-                </p>
+                {/* Stats row */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                  {[
+                    { number: "3+", label: "Leading Universities", sublabel: "Supporting this program" },
+                    { number: "100+", label: "Academic Partners", sublabel: "Backing our curriculum" },
+                    { number: "42", label: "Credit Hours", sublabel: "International standard" },
+                    { number: "95%", label: "Endorsement Rate", sublabel: "From educators surveyed" }
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      className="text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.number}</div>
+                      <div className="text-sm font-semibold text-blue-200 mb-1">{stat.label}</div>
+                      <div className="text-xs text-blue-300">{stat.sublabel}</div>
+                    </motion.div>
+                  ))}
+                </div>
                 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <motion.a
                     href="https://forms.gle/PAs7XKJxJnAhZ5o58"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-10 py-4 bg-white text-blue-700 font-bold text-lg rounded-full shadow-xl hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3"
-                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="group px-10 py-4 bg-white text-blue-700 font-bold text-lg rounded-full shadow-2xl hover:shadow-3xl hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-3"
+                    whileHover={{ scale: 1.05, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <GraduationCap className="w-6 h-6" />
+                    <GraduationCap className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
                     <span>Start Your Application</span>
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </motion.a>
                   
                   <motion.a
                     href="https://docs.google.com/forms/d/e/your-mentor-feedback-form"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-10 py-4 bg-transparent border-2 border-white/50 text-white font-bold text-lg rounded-full hover:border-white hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-3"
+                    className="group px-10 py-4 bg-transparent border-2 border-white/50 text-white font-bold text-lg rounded-full hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 flex items-center justify-center space-x-3"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Mail className="w-6 h-6" />
+                    <Mail className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                     <span>Share Your Endorsement</span>
-                    <ExternalLink className="w-5 h-5" />
+                    <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   </motion.a>
+                </div>
+                
+                {/* Trust indicators */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 text-sm text-blue-200">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <span>Trusted by 3+ Universities</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Award className="w-5 h-5 text-yellow-400" />
+                    <span>Internationally Recognized</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-5 h-5 text-purple-300" />
+                    <span>Educator Endorsed</span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -21,7 +21,7 @@ export default function Instructors() {
       category: 'Core Instructors',
       department: 'Computational Biology & Bioinformatics',
       institution: 'DeepBio Academy',
-      image: '/images/instructors/jubayer.jpg',
+      image: '/images/instructors/jubayer.png',
       email: 'jubayer@deepbioltd.com',
       phone: 'TBA',
       office: 'DeepBio Limited, Dhaka, Bangladesh',
