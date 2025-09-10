@@ -145,7 +145,7 @@ export default function Team() {
     },
     {
       id: 'mgmt2',
-      name: 'Tajria Ramann',
+      name: 'Tajrian Rahman',
       title: 'Academic Operations & Finance Manager',
       category: 'Management Team',
       image: '/images/instructors/tajria.jpg'
