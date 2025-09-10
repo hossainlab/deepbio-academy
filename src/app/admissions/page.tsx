@@ -639,13 +639,12 @@ export default function Admissions() {
                 <div className="flex items-start space-x-3">
                   <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p>admissions@deepbio.edu</p>
-                    <p>info@deepbio.edu</p>
+                    <p>deepbiobd@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <p>+880-XXX-XXXXX</p>
+                  <p>+8801843381652</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />

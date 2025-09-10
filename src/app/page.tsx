@@ -1412,8 +1412,7 @@ export default function Home() {
                 <div className="flex items-start space-x-3">
                   <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p>academy@deepbioltd.com</p>
-                    <p>admission@deepbioltd.com</p>
+                    <p>deepbiobd@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">

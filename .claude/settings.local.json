@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm run dev:*)",
-      "Read(/H:\\Webs\\deepbio-academy\\src\\app/**)"
+      "Read(/H:\\Webs\\deepbio-academy\\src\\app/**)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": [],

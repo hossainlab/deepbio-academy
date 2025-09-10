@@ -6,12 +6,14 @@ import {
   GraduationCap, Mail, Phone, MapPin, Cookie, Settings, Eye, 
   BarChart3, Globe, Shield, ArrowLeft, CheckCircle, X
 } from 'lucide-react';
+import Navbar from '../../components/Navbar';
 
 export default function CookiePolicy() {
   const lastUpdated = "January 15, 2024";
 
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
       {/* Header */}
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

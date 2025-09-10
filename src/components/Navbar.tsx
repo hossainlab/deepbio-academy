@@ -27,7 +27,12 @@ export default function Navbar({ isScrolled = false }: NavbarProps) {
     { name: 'FAQ', href: '/faq' }
   ];
 
-  const isActive = (href: string) => mounted && pathname === href;
+  const isActive = (href: string) => {
+    if (!mounted) return false;
+    const normalizedPathname = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname;
+    const normalizedHref = href.endsWith('/') && href !== '/' ? href.slice(0, -1) : href;
+    return normalizedPathname === normalizedHref;
+  };
 
   return (
     <motion.header 
