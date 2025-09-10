@@ -1163,6 +1163,84 @@ export default function Home() {
       </section>
 
       {/* =================================================================== */}
+      {/* ACADEMIC PARTNERSHIP SECTION */}
+      {/* =================================================================== */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Academic and Community Partnership</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Get 20K discount for your students through our Academic Partner Registration
+            </p>
+          </motion.div>
+
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Academic and Community Partner Registration</h3>
+                <h4 className="text-2xl font-semibold text-blue-600 mb-6">Professional Training in Bioinformatics and Computational Biology</h4>
+                <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                  Thank you for your interest in becoming an Academic Partner for the Professional Training in Bioinformatics and Computational Biology program.
+                  As an academic/community partner, your institution's students will enjoy automatic discounts (৳20,000 off) on the program fees, reducing the total cost to ৳60,000 BDT per student.
+                </p>
+                <p className="text-lg text-gray-700 mb-8">
+                  Please complete this form to register your institution. Our team will review your application and contact you with next steps.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <motion.a
+                  href="https://forms.gle/B22uU2RxFq58WNwE8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Register as Academic Partner
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </motion.a>
+              </div>
+
+              <div className="mt-12 grid md:grid-cols-2 gap-8">
+                <div className="bg-white rounded-2xl p-6 shadow-md">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">Automatic Discount</h4>
+                  </div>
+                  <p className="text-gray-700">Students from partner institutions automatically receive ৳20,000 discount on program fees</p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-6 shadow-md">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">Easy Registration</h4>
+                  </div>
+                  <p className="text-gray-700">Simple application process with quick review and approval for qualifying institutions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =================================================================== */}
       {/* CTA SECTION */}
       {/* =================================================================== */}
       <section className="py-24 bg-white">

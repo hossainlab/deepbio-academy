@@ -23,7 +23,8 @@ export default function Navbar({ isScrolled = false }: NavbarProps) {
     { name: 'Curriculum', href: '/curriculum' },
     { name: 'Admissions', href: '/admissions' },
     { name: 'Instructors', href: '/instructors' },
-    { name: 'Academic Policy', href: '/academic-integrity' }
+    { name: 'Academic Policy', href: '/academic-integrity' },
+    { name: 'FAQ', href: '/faq' }
   ];
 
   const isActive = (href: string) => mounted && pathname === href;

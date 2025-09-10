@@ -25,7 +25,7 @@ export default function Admissions() {
         "Write a statement of purpose (500-1000 words)",
         "No application fee"
       ],
-      duration: "2-3 weeks",
+      duration: "11 September, 2025 to 30 September, 2025",
       icon: <FileText className="w-8 h-8" />,
       color: "from-blue-500 to-cyan-500"
     },
@@ -41,7 +41,7 @@ export default function Admissions() {
         "Available via video call or in-person",
         "Interview duration: 20-30 minutes"
       ],
-      duration: "1-2 weeks after application review",
+      duration: "01 October, 2025 to 15 October, 2025",
       icon: <Phone className="w-8 h-8" />,
       color: "from-green-500 to-emerald-500"
     },
@@ -57,7 +57,7 @@ export default function Admissions() {
         "Housing and accommodation guidance",
         "Offer valid for 2 weeks from issue date"
       ],
-      duration: "1 week after interview",
+      duration: "16 October, 2025 to 20 October, 2025",
       icon: <Award className="w-8 h-8" />,
       color: "from-purple-500 to-pink-500"
     },
@@ -73,7 +73,7 @@ export default function Admissions() {
         "Submit visa documentation (for international students)",
         "Confirm attendance at mandatory orientation"
       ],
-      duration: "2 weeks to respond",
+      duration: "20 October, 2025 to 25 October, 2025",
       icon: <CheckCircle className="w-8 h-8" />,
       color: "from-orange-500 to-red-500"
     },
@@ -89,7 +89,7 @@ export default function Admissions() {
         "Orientation session attendance (mandatory)",
         "Begin your transformative journey in computational biology"
       ],
-      duration: "Before program start date",
+      duration: "26 October, 2025 to 01 November, 2025",
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-indigo-500 to-purple-500"
     }
