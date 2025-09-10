@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
   GraduationCap, Mail, Award,
-  Users, Globe, Star, Building,
+  Globe, Building,
   MapPin, Phone
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 
-export default function Instructors() {
+export default function Team() {
 
-  const instructorMembers = [
+  const teamMembers = [
     {
       id: 'jubayer',
       name: 'Md. Jubayer Hossain',
@@ -56,7 +56,8 @@ export default function Instructors() {
         'Bachelor of Science in Microbiology, Jagannath University'
       ],
       experience: [
-        'Research Assistant, One Health Lab, Jahangirnagar University'
+        'Research Assistant, One Health Lab, Jahangirnagar University', 
+        'Research Assistant, Big Bioinformatics Lab, CHIRAL Bangladesh'
       ],
       researchInterests: [
         'Transcriptomics',
@@ -91,8 +92,71 @@ export default function Instructors() {
       ],
       linkedin: 'https://www.linkedin.com/in/tasmim-rahman-adib-403074221/',
       github: 'https://github.com/Tasmim-Adib'
-    }
+    },
     
+    {
+      id: 'ta4',
+      name: 'Muhibullah Shahjahan',
+      title: 'Teaching Assistant',
+      category: 'Teaching Assistants',
+      image: '/images/instructors/muhib.jpg'
+    },
+    {
+      id: 'ta5',
+      name: 'Muntasim Fuad',
+      title: 'Teaching Assistant',
+      category: 'Teaching Assistants',
+      image: '/images/instructors/fuad.jpeg'
+    },
+    {
+      id: 'ta6',
+      name: 'Musab Shahariar',
+      title: 'Teaching Assistant',
+      category: 'Teaching Assistants',
+      image: '/images/instructors/musab.jpg'
+    },
+    {
+      id: 'ta7',
+      name: 'Pritom Kundu',
+      title: 'Teaching Assistant',
+      category: 'Teaching Assistants',
+      image: '/images/instructors/pritom.jpg'
+    },
+    {
+      id: 'ta8',
+      name: 'Mohtasim Billah Rifat',
+      title: 'Teaching Assistant',
+      category: 'Teaching Assistants',
+      image: '/images/instructors/rifat.png'
+    },
+    {
+      id: 'ta9',
+      name: 'Sajjad Hossen',
+      title: 'Teaching Assistant',
+      category: 'Teaching Assistants',
+      image: '/images/instructors/sajjad.jpg'
+    },
+    {
+      id: 'mgmt1',
+      name: 'Nishat Mim',
+      title: 'Program Coordinator',
+      category: 'Management Team',
+      image: '/images/instructors/nishat.jpg'
+    },
+    {
+      id: 'mgmt2',
+      name: 'Tajria Ramann',
+      title: 'Academic Operations & Finance Manager',
+      category: 'Management Team',
+      image: '/images/instructors/tajria.jpg'
+    },
+    {
+      id: 'mgmt3',
+      name: 'TBD',
+      title: 'Outreach & Engagement Coordinator',
+      category: 'Management Team',
+      image: '/images/instructors/placeholder.jpg'
+    }
   ];
 
 
@@ -116,21 +180,21 @@ export default function Instructors() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8">
-              Distinguished
+              Meet Our
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent block">
-                Instructors & Researchers
+                Expert Team
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
-              We are assembling a world-class team of instructors and researchers. 
-              Meet our incoming expert instructors who will guide your learning journey.
+              Our team consists of experienced instructors, dedicated teaching assistants, 
+              and a passionate management team committed to your learning success.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-blue-600" />
-                  <span>International Standard Instructors</span>
+                  <span>International Standard Team</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Globe className="w-5 h-5 text-green-600" />
@@ -147,7 +211,7 @@ export default function Instructors() {
       </section>
 
 
-      {/* Program Administration */}
+      {/* Core Instructors */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -157,13 +221,13 @@ export default function Instructors() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Core Instructors</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Leadership and guidance from experienced professionals in computational biology and bioinformatics.
             </p>
           </motion.div>
           <div className="grid gap-8">
-            {instructorMembers.filter(instructor => instructor.category === 'Core Instructors').map((instructor, index) => (
+            {teamMembers.filter(member => member.category === 'Core Instructors').map((instructor, index) => (
               <motion.div
                 key={instructor.id}
                 className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
@@ -183,7 +247,6 @@ export default function Instructors() {
                             alt={instructor.name}
                             className="w-full h-full object-cover"
                             onError={(e) => {
-                              // Fallback to initials if image fails to load
                               const target = e.target as HTMLImageElement;
                               target.style.display = 'none';
                               const fallbackDiv = target.nextElementSibling as HTMLElement;
@@ -222,7 +285,7 @@ export default function Instructors() {
                       </div>
                     </div>
                     
-                    {/* Instructor Information */}
+                    {/* Team Member Information */}
                     <div className="lg:w-3/4">
                       <div className="mb-6">
                         <h2 className="text-3xl font-bold text-gray-900 mb-2">{instructor.name}</h2>
@@ -233,44 +296,170 @@ export default function Instructors() {
                       </div>
 
                       {/* Research Interests */}
-                      <div className="mb-6">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">Research Interests</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {instructor.researchInterests.map((interest) => (
-                            <span key={interest} className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">
-                              {interest}
-                            </span>
-                          ))}
+                      {instructor.researchInterests && (
+                        <div className="mb-6">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3">Research Interests</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {instructor.researchInterests.map((interest) => (
+                              <span key={interest} className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">
+                                {interest}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                      </div>
+                      )}
 
                       {/* Education */}
-                      <div className="mb-6">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">Education</h3>
-                        <div className="space-y-2">
-                          {instructor.education.map((edu, index) => (
-                            <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
-                              <GraduationCap className="w-4 h-4 text-blue-500 mt-0.5" />
-                              <span>{edu}</span>
-                            </div>
-                          ))}
+                      {instructor.education && (
+                        <div className="mb-6">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3">Education</h3>
+                          <div className="space-y-2">
+                            {instructor.education.map((edu, index) => (
+                              <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
+                                <GraduationCap className="w-4 h-4 text-blue-500 mt-0.5" />
+                                <span>{edu}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                      </div>
+                      )}
 
                       {/* Professional Experience */}
-                      <div className="mb-6">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">Professional Experience</h3>
-                        <div className="space-y-2">
-                          {instructor.experience.map((exp, index) => (
-                            <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
-                              <Building className="w-4 h-4 text-green-500 mt-0.5" />
-                              <span>{exp}</span>
-                            </div>
-                          ))}
+                      {instructor.experience && (
+                        <div className="mb-6">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3">Professional Experience</h3>
+                          <div className="space-y-2">
+                            {instructor.experience.map((exp, index) => (
+                              <div key={index} className="flex items-start space-x-2 text-sm text-gray-700">
+                                <Building className="w-4 h-4 text-green-500 mt-0.5" />
+                                <span>{exp}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                      </div>
+                      )}
 
                     </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Teaching Assistants */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Teaching Assistants</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Dedicated support staff to help guide students through their learning journey.
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.filter(member => member.category === 'Teaching Assistants').map((ta, index) => (
+              <motion.div
+                key={ta.id}
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="p-8 text-center">
+                  {/* Profile Image */}
+                  <div className="relative mb-6">
+                    <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 border-4 border-white shadow-lg">
+                      <img
+                        src={ta.image}
+                        alt={ta.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallbackDiv = target.nextElementSibling as HTMLElement;
+                          if (fallbackDiv) fallbackDiv.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="hidden w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
+                        {ta.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* TA Information */}
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{ta.name}</h3>
+                    <p className="text-lg text-blue-600 font-semibold">{ta.title}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Management Team */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Management Team</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our dedicated management team ensures smooth operations and exceptional program delivery.
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.filter(member => member.category === 'Management Team').map((mgmt, index) => (
+              <motion.div
+                key={mgmt.id}
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="p-8 text-center">
+                  {/* Profile Image */}
+                  <div className="relative mb-6">
+                    <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-purple-100 to-indigo-100 border-4 border-white shadow-lg">
+                      <img
+                        src={mgmt.image}
+                        alt={mgmt.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallbackDiv = target.nextElementSibling as HTMLElement;
+                          if (fallbackDiv) fallbackDiv.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="hidden w-full h-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-white text-2xl font-bold">
+                        {mgmt.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Management Team Information */}
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{mgmt.name}</h3>
+                    <p className="text-lg text-purple-600 font-semibold">{mgmt.title}</p>
                   </div>
                 </div>
               </motion.div>
@@ -376,7 +565,7 @@ export default function Instructors() {
             <div>
               <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3 text-gray-400">
-                {['Program Overview', 'Curriculum', 'Admissions', 'Instructors', 'Career Services', 'Student Life'].map((link) => (
+                {['Program Overview', 'Curriculum', 'Admissions', 'Team', 'Career Services', 'Student Life'].map((link) => (
                   <li key={link}>
                     <a href="#" className="hover:text-white transition-colors">{link}</a>
                   </li>

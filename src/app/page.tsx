@@ -1395,7 +1395,7 @@ export default function Home() {
                   { name: 'Program Overview', href: '/' }, 
                   { name: 'Curriculum', href: '/curriculum' }, 
                   { name: 'Admissions', href: '/admissions' }, 
-                  { name: 'Instructors', href: '/instructors' }, 
+                  { name: 'Team', href: '/team' }, 
                   { name: 'Career Services', href: '#' },
                   { name: 'Student Life', href: '#' }
                 ].map((link) => (
