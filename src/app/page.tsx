@@ -409,24 +409,24 @@ export default function Home() {
                 icon: <BookOpen className="w-12 h-12" />,
                 title: "Bioinformatics",
                 description: "Apply computational methods to analyze and interpret biological data, focusing on database management and algorithm development.",
-                color: "from-blue-500 to-cyan-500",
-                bgColor: "from-blue-50 to-cyan-50",
+                color: "from-blue-600 to-purple-600",
+                bgColor: "from-blue-50 to-purple-50",
                 features: ["Data Analysis", "Algorithm Development", "Database Management", "Statistical Methods"]
               },
               {
                 icon: <Users className="w-12 h-12" />,
                 title: "Computational Biology",
                 description: "Use mathematical modeling and simulation to understand complex biological systems and predict biological behavior.",
-                color: "from-green-500 to-emerald-500",
-                bgColor: "from-green-50 to-emerald-50",
+                color: "from-blue-600 to-indigo-600",
+                bgColor: "from-blue-50 to-indigo-50",
                 features: ["Mathematical Modeling", "System Simulation", "Predictive Analysis", "Theoretical Framework"]
               },
               {
                 icon: <Award className="w-12 h-12" />,
                 title: "AI Integration",
                 description: "Leverage machine learning, deep learning, and generative AI to solve complex biological problems and accelerate discovery.",
-                color: "from-purple-500 to-pink-500",
-                bgColor: "from-purple-50 to-pink-50",
+                color: "from-purple-600 to-indigo-600",
+                bgColor: "from-purple-50 to-indigo-50",
                 features: ["Machine Learning", "Deep Learning", "Generative AI", "Pattern Recognition"]
               }
             ].map((field, index) => (
