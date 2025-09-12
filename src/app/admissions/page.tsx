@@ -25,12 +25,28 @@ export default function Admissions() {
         "Write a statement of purpose (500-1000 words)",
         "No application fee"
       ],
-      duration: "11 September, 2025 to 30 September, 2025",
+      duration: "11 September, 2025 to 10 October, 2025",
       icon: <FileText className="w-8 h-8" />,
       color: "from-blue-500 to-cyan-500"
     },
     {
       number: 2,
+      title: "Selected List for Interview",
+      description: "Shortlisted candidates will be notified for the interview round",
+      details: [
+        "Review of all submitted applications",
+        "Academic credentials evaluation",
+        "Statement of purpose assessment",
+        "Reference letter verification",
+        "Notification sent to selected candidates via email",
+        "Interview preparation guidelines provided"
+      ],
+      duration: "11 October, 2025",
+      icon: <Users className="w-8 h-8" />,
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      number: 3,
       title: "Interview Call",
       description: "Selected candidates will be invited for a comprehensive interview",
       details: [
@@ -41,12 +57,12 @@ export default function Admissions() {
         "Available via video call or in-person",
         "Interview duration: 20-30 minutes"
       ],
-      duration: "01 October, 2025 to 15 October, 2025",
+      duration: "12 October, 2025 to 14 October, 2025",
       icon: <Phone className="w-8 h-8" />,
       color: "from-green-500 to-emerald-500"
     },
     {
-      number: 3,
+      number: 4,
       title: "Admission Offer",
       description: "Successful candidates receive conditional admission offer",
       details: [
@@ -57,12 +73,12 @@ export default function Admissions() {
         "Housing and accommodation guidance",
         "Offer valid for 2 weeks from issue date"
       ],
-      duration: "16 October, 2025 to 20 October, 2025",
+      duration: "16 October, 2025",
       icon: <Award className="w-8 h-8" />,
       color: "from-purple-500 to-pink-500"
     },
     {
-      number: 4,
+      number: 5,
       title: "Acceptance/Rejection",
       description: "Candidates must respond to the admission offer",
       details: [
@@ -73,25 +89,43 @@ export default function Admissions() {
         "Submit visa documentation (for international students)",
         "Confirm attendance at mandatory orientation"
       ],
-      duration: "20 October, 2025 to 25 October, 2025",
+      duration: "17 October, 2025 to 19 October, 2025",
       icon: <CheckCircle className="w-8 h-8" />,
       color: "from-orange-500 to-red-500"
     },
     {
-      number: 5,
-      title: "Official Admission & Fees",
-      description: "Complete enrollment and fee payment to secure your seat",
+      number: 6,
+      title: "Admission Start",
+      description: "Begin the enrollment process and program orientation",
       details: [
-        "Pay remaining program fees (50,000 BDT)",
+        "Begin semester-based payment plan (৳60,000 total across 4 semesters)",
+        "First semester fee: ৳15,000 BDT due at enrollment",
+        "Remaining 3 semesters: ৳15,000 BDT each",
         "Receive official enrollment confirmation",
         "Access to student portal and learning management system",
         "Welcome package with program materials",
         "Orientation session attendance (mandatory)",
         "Begin your transformative journey in computational biology"
       ],
-      duration: "26 October, 2025 to 01 November, 2025",
+      duration: "20 October, 2025 to 31 October, 2025",
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-indigo-500 to-purple-500"
+    },
+    {
+      number: 7,
+      title: "Early Discount Period",
+      description: "Special discount period for early enrolled students",
+      details: [
+        "৳20,000 discount on total program fees",
+        "Priority access to course materials",
+        "Early access to learning management system",
+        "Bonus career counseling session",
+        "Exclusive networking opportunities",
+        "Limited time offer - first come, first served"
+      ],
+      duration: "20 October, 2025 to 25 October, 2025",
+      icon: <DollarSign className="w-8 h-8" />,
+      color: "from-green-500 to-teal-500"
     }
   ];
 
