@@ -21,7 +21,6 @@ export default function Admissions() {
       details: [
         "Submit completed application form online",
         "Upload academic transcripts (Bachelor's degree required)",
-        "Submit two academic/professional reference letters",
         "Write a statement of purpose (500-1000 words)",
         "No application fee"
       ],
@@ -37,7 +36,6 @@ export default function Admissions() {
         "Review of all submitted applications",
         "Academic credentials evaluation",
         "Statement of purpose assessment",
-        "Reference letter verification",
         "Notification sent to selected candidates via email",
         "Interview preparation guidelines provided"
       ],
@@ -141,10 +139,8 @@ export default function Admissions() {
     {
       category: "Additional Requirements",
       items: [
-        "Two academic or professional reference letters",
         "Statement of Purpose (500-1000 words)",
-        "Updated CV/Resume",
-        "Copy of passport (for international applicants)"
+        "Updated CV/Resume"
       ]
     },
     {
